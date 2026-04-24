@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Divine Tourism India — May 2026 Social Media Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --saffron: #D97706;
+    --saffron-deep: #B45309;
+    --gold: #B8962E;
+    --ivory: #FAF6EE;
+    --cream: #F5EED9;
+    --ink: #1A1A1A;
+    --ink-soft: #3F3F46;
+    --muted: #6B7280;
+    --line: #E5DCC3;
+    --white: #FFFFFF;
+    --maroon: #7B2D26;
+    --teal: #0F766E;
+    --display: 'Cormorant Garamond', serif;
+    --body: 'Jost', sans-serif;
+    --status-not: #9CA3AF;
+    --status-progress: #F59E0B;
+    --status-scheduled: #3B82F6;
+    --status-published: #10B981;
+    --status-hold: #EF4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--ivory);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+  a { color: var(--saffron-deep); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button { font-family: var(--body); cursor: pointer; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #7B2D26 0%, #B45309 55%, #D97706 100%);
+    color: var(--white);
+    padding: 64px 24px 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0, transparent 40%);
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .hero .om { font-size: 56px; font-family: var(--display); opacity: 0.9; margin-bottom: 8px; }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero .sub { font-size: clamp(16px, 2vw, 20px); opacity: 0.92; margin-bottom: 24px; font-weight: 300; }
+  .hero .tag-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+  .hero-tag {
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .hero-meta { margin-top: 28px; font-size: 13px; opacity: 0.8; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* PROGRESS BAR */
+  .progress-bar {
+    background: var(--white);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .progress-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+  .progress-text { font-size: 13px; color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+  .progress-track { flex: 1; height: 8px; background: var(--cream); border-radius: 99px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--saffron) 0%, var(--gold) 100%); width: 0%; transition: width 0.4s; }
+
+  /* SECTIONS */
+  main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+  section { margin-bottom: 64px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .section-head h2 { font-size: 28px; color: var(--ink); }
+  .section-head .toggle { font-size: 20px; color: var(--saffron-deep); transition: transform 0.2s; }
+  .section-head.collapsed .toggle { transform: rotate(-90deg); }
+  .section-body.collapsed { display: none; }
+
+  /* SCHEDULE STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .stat-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+  .stat-card .value { font-family: var(--display); font-size: 28px; color: var(--saffron-deep); font-weight: 600; }
+  .stat-card .detail { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+  .export-btn {
+    background: var(--saffron-deep);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 16px;
+    transition: background 0.2s;
+  }
+  .export-btn:hover { background: var(--maroon); }
+
+  /* BRAND INTEL */
+  .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .brand-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .brand-card h3 { font-size: 20px; margin-bottom: 10px; color: var(--maroon); }
+  .brand-card p { font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .brand-card .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pill {
+    background: var(--cream);
+    color: var(--saffron-deep);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .pillar-list { list-style: none; }
+  .pillar-list li { padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+  .pillar-list li:last-child { border-bottom: none; }
+  .pillar-list strong { color: var(--maroon); display: block; font-family: var(--display); font-size: 16px; font-weight: 600; }
+
+  /* CALENDAR GRID */
+  .week-wrap { margin-bottom: 32px; }
+  .week-title {
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--maroon);
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 4px solid var(--saffron);
+  }
+  .week-title small { font-family: var(--body); font-size: 13px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+  }
+  .day-cell {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 10px;
+    min-height: 118px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .day-cell:hover {
+    border-color: var(--saffron);
+    box-shadow: 0 4px 12px rgba(217,119,6,0.15);
+    transform: translateY(-2px);
+  }
+  .day-cell .day-num { font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ink); }
+  .day-cell .day-date { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .day-cell .day-type {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .day-cell .day-concept { font-size: 11px; color: var(--ink-soft); line-height: 1.3; flex: 1; }
+  .day-cell .status-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 99px;
+    background: #F3F4F6;
+    color: var(--status-not);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .day-cell[data-status="in_progress"] { border-left: 4px solid var(--status-progress); }
+  .day-cell[data-status="in_progress"] .status-badge { background: #FEF3C7; color: #B45309; }
+  .day-cell[data-status="scheduled"] { border-left: 4px solid var(--status-scheduled); }
+  .day-cell[data-status="scheduled"] .status-badge { background: #DBEAFE; color: #1E40AF; }
+  .day-cell[data-status="published"] { border-left: 4px solid var(--status-published); background: #F0FDF4; }
+  .day-cell[data-status="published"] .status-badge { background: #D1FAE5; color: #047857; }
+  .day-cell[data-status="on_hold"] { border-left: 4px solid var(--status-hold); }
+  .day-cell[data-status="on_hold"] .status-badge { background: #FEE2E2; color: #B91C1C; }
+  .day-cell .format-icon {
+    display: inline-block;
+    font-size: 10px;
+    background: var(--cream);
+    color: var(--saffron-deep);
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    align-self: flex-start;
+    font-weight: 600;
+  }
+  .day-cell.reel .format-icon { background: #FDE68A; color: #92400E; }
+
+  /* DAY PANEL */
+  .panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,26,0.5);
+    backdrop-filter: blur(3px);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .panel-backdrop.active { opacity: 1; pointer-events: auto; }
+  .day-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 460px;
+    max-width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    z-index: 101;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+    overflow-y: auto;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+  }
+  .day-panel.active { transform: translateX(0); }
+  .panel-head {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .panel-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .panel-nav button {
+    background: transparent;
+    border: 1px solid var(--line);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .panel-nav button:hover { background: var(--white); border-color: var(--saffron); color: var(--saffron-deep); }
+  .panel-close { background: transparent; border: none; font-size: 24px; color: var(--ink-soft); width: 32px; height: 32px; }
+  .panel-head h3 { font-size: 13px; color: var(--saffron-deep); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--body); font-weight: 600; }
+  .panel-head .panel-title { font-size: 22px; color: var(--ink); margin-top: 4px; font-weight: 600; }
+  .panel-head .panel-meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .panel-status-row { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .panel-status-row button {
+    padding: 5px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--line);
+    background: white;
+    font-size: 11px;
+    color: var(--ink-soft);
+    transition: all 0.15s;
+  }
+  .panel-status-row button.active {
+    background: var(--saffron);
+    color: white;
+    border-color: var(--saffron);
+  }
+  .panel-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--line);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .panel-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 4px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .panel-tab.active { color: var(--saffron-deep); border-bottom-color: var(--saffron); font-weight: 600; }
+  .panel-body { padding: 22px; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+  .block { margin-bottom: 22px; }
+  .block h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--saffron-deep);
+    margin-bottom: 8px;
+    font-family: var(--body);
+    font-weight: 700;
+  }
+  .block p, .block li { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  .block ul { padding-left: 18px; }
+  .block ul li { margin-bottom: 4px; }
+  .swatches { display: flex; gap: 8px; }
+  .swatch { width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--line); }
+  .copy-box {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    color: var(--ink);
+    white-space: pre-wrap;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .copy-btn {
+    background: var(--saffron-deep);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .copy-btn:hover { background: var(--maroon); }
+  .hashtag-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .hashtag-pill { background: var(--cream); color: var(--saffron-deep); padding: 3px 9px; border-radius: 99px; font-size: 11px; cursor: pointer; }
+  .hashtag-pill:hover { background: var(--saffron); color: white; }
+  .goal-badge {
+    display: inline-block;
+    background: var(--maroon);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .regen-btn {
+    width: 100%;
+    background: transparent;
+    border: 2px dashed var(--saffron);
+    color: var(--saffron-deep);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 14px;
+  }
+  .regen-btn:hover { background: var(--cream); }
+
+  /* WEEKLY ARC */
+  .arc-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    position: relative;
+  }
+  .arc-step {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+  }
+  .arc-step .arc-num {
+    font-family: var(--display);
+    font-size: 36px;
+    color: var(--saffron);
+    line-height: 1;
+    font-weight: 600;
+  }
+  .arc-step h4 { font-family: var(--display); font-size: 18px; color: var(--maroon); margin: 4px 0 6px; }
+  .arc-step p { font-size: 12px; color: var(--muted); }
+
+  /* REEL CARDS */
+  .reel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .reel-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+  }
+  .reel-card .reel-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--saffron-deep); font-weight: 700; }
+  .reel-card h4 { font-family: var(--display); font-size: 18px; color: var(--ink); margin: 4px 0 8px; }
+  .reel-card .hook { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 8px; padding: 8px 10px; background: var(--ivory); border-left: 3px solid var(--saffron); border-radius: 4px; }
+  .reel-card .reel-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .virality-high { background: #10B981; color: white; padding: 2px 8px; border-radius: 99px; font-size: 10px; font-weight: 600; }
+  .virality-med { background: #F59E0B; color: white; padding: 2px 8px; border-radius: 99px; font-size: 10px; font-weight: 600; }
+
+  /* ENGAGEMENT BOOSTERS */
+  .booster-group { margin-bottom: 22px; }
+  .booster-group h3 { font-size: 16px; color: var(--maroon); margin-bottom: 10px; }
+  .booster-pills { display: flex; flex-direction: column; gap: 8px; }
+  .booster-pill {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .booster-pill strong { color: var(--maroon); }
+
+  /* PROFILE OPT */
+  .profile-preview {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 400px;
+  }
+  .profile-preview .handle { font-weight: 600; font-size: 15px; }
+  .profile-preview .bio {
+    font-size: 13px;
+    margin-top: 8px;
+    color: var(--ink);
+    white-space: pre-wrap;
+    line-height: 1.55;
+  }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 14px;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .checklist li input { margin-top: 4px; accent-color: var(--saffron); }
+  .checklist li.done { opacity: 0.6; text-decoration: line-through; }
+
+  /* FOOTER */
+  footer {
+    background: var(--maroon);
+    color: var(--ivory);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+  footer strong { color: var(--gold); font-family: var(--display); font-size: 17px; }
+
+  @media (max-width: 720px) {
+    .brand-grid { grid-template-columns: 1fr; }
+    .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+    .arc-timeline { grid-template-columns: 1fr 1fr; }
+    .day-panel { width: 100%; height: 90vh; top: auto; bottom: 0; border-radius: 20px 20px 0 0; transform: translateY(100%); }
+    .day-panel.active { transform: translateY(0); }
+    .hero { padding: 48px 20px 72px; }
+    main { padding: 32px 16px; }
+  }
+  @media print {
+    .progress-bar, .panel-backdrop, .day-panel, .regen-btn, .export-btn, .copy-btn { display: none !important; }
+    .day-cell { break-inside: avoid; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="om">ॐ</div>
+    <h1>Divine Tourism India</h1>
+    <p class="sub">May 2026 · 28-Piece Social Media Content Plan · Sacred Journeys, Curated</p>
+    <div class="tag-row">
+      <span class="hero-tag">🙏 Spiritual Tourism</span>
+      <span class="hero-tag">📍 Chennai, India</span>
+      <span class="hero-tag">📱 Instagram · Facebook · YouTube Shorts</span>
+      <span class="hero-tag">🕉️ Arupadai Veedu · Neem Karoli Baba</span>
+    </div>
+    <div class="hero-meta">20 Posts · 8 Reels · v2 Aligned to Live Package Catalog · Updated April 24, 2026</div>
+  </div>
+</header>
+
+<div class="progress-bar">
+  <div class="progress-inner">
+    <span class="progress-text">📊 <span id="published-count">0</span> of 28 published</span>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span class="progress-text" id="progress-pct">0%</span>
+    <button onclick="exportCSV()" style="margin-left:16px;background:var(--saffron-deep);color:white;border:none;padding:8px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--body);">⬇ Export CSV</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ BRAND INTELLIGENCE ============ -->
+<section id="brand-intel">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>🧠 Brand Intelligence</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="brand-grid">
+      <div class="brand-card">
+        <h3>👤 Audience Persona — "Devotee Deepa"</h3>
+        <p><strong>Age:</strong> 38–62, Tamil-speaking South Indian households, NRIs in US/UK/Singapore. Second persona: urban Gen-X professionals (35–50) seeking meaning post-career-peak (Kainchi Dham / Neem Karoli audience — Zuckerberg-Jobs-Julia-Roberts lore draws them).</p>
+        <p><strong>Pain points:</strong> Too scattered to plan Arupadai Veedu logistics alone · senior parents need comfort + reliable transport · want authentic darshan, not rushed tourism.</p>
+        <p><strong>Aspirations:</strong> Fulfill a vow · introduce children to faith · find stillness · tick a spiritual bucket-list before 60.</p>
+        <p><strong>Platform habits:</strong> Instagram saves + WhatsApp forwards at 6–8am and 8–10pm IST. Facebook for older demographic. YouTube Shorts consumed on TV via Chromecast.</p>
+      </div>
+      <div class="brand-card">
+        <h3>🎙️ Brand Voice</h3>
+        <p><em>"Write like a trusted family friend who also happens to be a scholar of Murugan bhakti and Himalayan yogic lineage. Warm, reverent, never preachy. Use Tamil + Sanskrit terms where authentic, translate them gently. Never sound like a discount travel aggregator."</em></p>
+        <div class="meta-row">
+          <span class="pill">Reverent</span>
+          <span class="pill">Warm</span>
+          <span class="pill">Authentic</span>
+          <span class="pill">Informed</span>
+          <span class="pill">Unhurried</span>
+        </div>
+      </div>
+      <div class="brand-card">
+        <h3>🪔 Content Pillars (v2)</h3>
+        <ul class="pillar-list">
+          <li><strong>Package Spotlights (30%)</strong>Direct feature of the 11 live packages — Arupadai Veedu, Kainchi Dham (both tiers), Navagraha, Shirdi, Varanasi, Shakti, Puri/Konark.</li>
+          <li><strong>Temple Lore & Legend (20%)</strong>Stories behind each abode, Kainchi miracles, Neem Karoli teachings.</li>
+          <li><strong>Pilgrim Journey Diaries (20%)</strong>BTS reels, devotee testimonials, darshan moments, sunrise footage.</li>
+          <li><strong>Practical Yatra Guides (15%)</strong>Packing, dress codes, darshan timings, senior-friendly tips.</li>
+          <li><strong>Offers & Conversion (15%)</strong>Early Bird (real prices), comparison carousels, Final Call urgency.</li>
+        </ul>
+      </div>
+      <div class="brand-card">
+        <h3>📅 May 2026 Seasonal Hooks</h3>
+        <p>May is peak summer in Tamil Nadu but ideal for Uttarakhand pilgrimages — Kainchi Dham and Chardham open post-snowmelt. Lean into both simultaneously.</p>
+        <ul class="pillar-list">
+          <li><strong>May 1 — Akshaya Tritiya</strong>Auspicious day to start pilgrimage bookings.</li>
+          <li><strong>May 10 — Ganga Saptami</strong>Haridwar & Rishikesh theme.</li>
+          <li><strong>May 12 — Buddha Purnima</strong>Meditation & universal compassion angle.</li>
+          <li><strong>May 15 — Kainchi Dham Sthapana Divas</strong>Foundation day of the ashram — flagship post.</li>
+          <li><strong>Chardham Yatra opens</strong>Kedarnath & Badrinath portals open early-mid May.</li>
+          <li><strong>Tamil Nadu summer vacation</strong>Families book Arupadai Veedu for school break.</li>
+        </ul>
+      </div>
+      <div class="brand-card">
+        <h3>🏆 Competitor Snapshot</h3>
+        <p><strong>@thomascookindia.spiritual</strong> — Polished but corporate; gap: they lack the warm guru-lineage storytelling.</p>
+        <p><strong>@rajamanickamtours</strong> — Strong Arupadai packages; gap: almost zero Kainchi/North India content.</p>
+        <p><strong>@spiritualindiatours</strong> — NRI-focused; gap: thin on Tamil-language devotional content.</p>
+        <div class="meta-row" style="margin-top:14px">
+          <span class="pill">Opportunity 1: Package comparison content (fly-in vs road-trip Kainchi)</span>
+          <span class="pill">Opportunity 2: Navagraha short-haul positioning (under ₹20K entry)</span>
+          <span class="pill">Opportunity 3: Real price transparency in Early Bird posts</span>
+        </div>
+      </div>
+      <div class="brand-card" style="border:2px solid var(--saffron);">
+        <h3>📦 Live Package Catalog (Featured in May)</h3>
+        <ul class="pillar-list">
+          <li><strong>Arupadai Veedu — 5D · ₹25,500</strong>Core Tamil Nadu offering — Senior & Parent Friendly. Featured May 3 reel, May 8, May 22 Early Bird.</li>
+          <li><strong>Kainchi Dham road trip — 5D · ₹24,682</strong>Nainital + Ranikhet + Kainchi combo. Comparison carousel May 17.</li>
+          <li><strong>Kainchi Dham fly-in — 4D · ₹39,999</strong>Premium Chennai fly-in. Flagship May 15 reel + comparison.</li>
+          <li><strong>Navagraha Circuit — 3D · ₹17,500</strong>Lowest-ticket entry product — Chennai short-haul. Featured May 11.</li>
+          <li><strong>Shirdi · Nashik · Shignapur — 3D · ₹18,499</strong>Fly-in, flights included. Featured May 20.</li>
+          <li><strong>Kasi / Varanasi — 4D · ₹27,500</strong>Tied to Ganga Saptami hook. Featured May 10 reel.</li>
+          <li><strong>Divine Feminine Circuit — 4D · ₹46,500</strong>Shakti temples, women's-group positioning. Featured May 13.</li>
+          <li><strong>Sacred East Coast (Puri + Konark) — 5D · ₹74,500</strong>Premium tier aspirational. Featured May 27.</li>
+          <li><strong>Also in catalog</strong>Dwarka (₹40,600), South Indian Temples (₹66,500), Tamil Nadu Classics 8D (₹44,500) — available for custom posts in June.</li>
+        </ul>
+      </div>
+      <div class="brand-card">
+        <h3>📱 Platform Strategy</h3>
+        <p><strong>Primary — Instagram (5×/week):</strong> Reels for reach, carousels for saves, feeds the WhatsApp-forward pipeline.</p>
+        <p><strong>Secondary — Facebook (4×/week):</strong> Older devotee demographic, group bookings, Tamil community.</p>
+        <p><strong>Tertiary — YouTube Shorts (2×/week):</strong> Same reels repurposed; strong for Kainchi Dham search traffic.</p>
+        <p style="margin-top:10px;"><strong>Cadence for May:</strong> 28 pieces = ~6.5/week, distributed Mon/Tue/Wed/Fri/Sat/Sun with Thursday as batching/off-day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSTING SCHEDULE SUMMARY ============ -->
+<section id="schedule-summary">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>📆 Posting Schedule Summary</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="label">Total Pieces</div>
+        <div class="value">28</div>
+        <div class="detail">20 posts + 8 reels across May 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Posts / Week</div>
+        <div class="value">6–7</div>
+        <div class="detail">Thursday = off / batch day</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Best Days</div>
+        <div class="value">Tue · Fri · Sun</div>
+        <div class="detail">Tuesday = Murugan day (high bhakti engagement)</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Best Time Windows</div>
+        <div class="value">7–9am · 7–9pm</div>
+        <div class="detail">IST — pre-puja morning & post-dinner family scroll</div>
+      </div>
+    </div>
+    <button class="export-btn" onclick="exportCSV()">📥 Export Schedule as CSV</button>
+  </div>
+</section>
+
+<!-- ============ WEEKLY ARC ============ -->
+<section id="weekly-arc">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>🌅 4-Week Narrative Arc</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="arc-timeline">
+      <div class="arc-step">
+        <div class="arc-num">01</div>
+        <h4>Introduce & Educate</h4>
+        <p>May 1–7 · Brand story. Arupadai 5D at ₹25,500 introduced. Akshaya Tritiya hook. Packing guide.</p>
+      </div>
+      <div class="arc-step">
+        <div class="arc-num">02</div>
+        <h4>Package Spotlights</h4>
+        <p>May 8–14 · Kasi (₹27,500) + Navagraha (₹17,500) + Shakti Circuit (₹46,500). Ganga Saptami + Buddha Purnima tie-ins.</p>
+      </div>
+      <div class="arc-step">
+        <div class="arc-num">03</div>
+        <h4>Flagship & Decision</h4>
+        <p>May 15–21 · Kainchi Sthapana Divas flagship (₹39,999 fly-in). Fly-in vs road comparison. Shirdi (₹18,499) feature.</p>
+      </div>
+      <div class="arc-step">
+        <div class="arc-num">04</div>
+        <h4>Convert & Premium</h4>
+        <p>May 22–31 · Early Bird with real prices across 5 packages. Puri premium tier (₹74,500). Final call urgency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 30-DAY CALENDAR GRID ============ -->
+<section id="calendar">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>🗓️ May 2026 — Click Any Day</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div id="calendar-weeks"></div>
+  </div>
+</section>
+
+<!-- ============ REEL CONCEPTS ============ -->
+<section id="reels-section">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>🎬 8 Reel Concepts</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="reel-grid" id="reel-cards"></div>
+  </div>
+</section>
+
+<!-- ============ ENGAGEMENT BOOSTERS ============ -->
+<section id="boosters">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>💬 Engagement Boosters Bank</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="booster-group">
+      <h3>Poll Ideas</h3>
+      <div class="booster-pills">
+        <div class="booster-pill"><strong>Poll 1 —</strong> "Which Arupadai Veedu calls you most?" → Palani / Thiruchendur / Swamimalai / Thiruthani</div>
+        <div class="booster-pill"><strong>Poll 2 —</strong> "First time visiting Kainchi Dham?" → Yes, nervous / Been many times / Planning my first</div>
+        <div class="booster-pill"><strong>Poll 3 —</strong> "Morning darshan or evening arati — what moves you more?" → Morning / Evening</div>
+        <div class="booster-pill"><strong>Poll 4 —</strong> "Travel with parents or with kids — which changes you more?" → Parents / Kids / Both equal</div>
+        <div class="booster-pill"><strong>Poll 5 —</strong> "Chardham this year — yes or next year?" → This May / Next year / Already been</div>
+      </div>
+    </div>
+    <div class="booster-group">
+      <h3>This or That</h3>
+      <div class="booster-pills">
+        <div class="booster-pill"><strong>1 —</strong> Palani hill climb on foot OR winch car up? (tell us in comments why)</div>
+        <div class="booster-pill"><strong>2 —</strong> Silent Kainchi morning OR Hanuman Chalisa group chant at 10 AM?</div>
+        <div class="booster-pill"><strong>3 —</strong> Ocean temple at Thiruchendur OR forest temple at Pazhamudircholai?</div>
+        <div class="booster-pill"><strong>4 —</strong> Kedarnath first OR Badrinath first on your Chardham?</div>
+        <div class="booster-pill"><strong>5 —</strong> Tulsi mala OR Rudraksha mala — which is on your wrist right now?</div>
+      </div>
+    </div>
+    <div class="booster-group">
+      <h3>Fill-in-the-Blank Starters</h3>
+      <div class="booster-pills">
+        <div class="booster-pill">"The first time I climbed Palani's 693 steps, I felt ______"</div>
+        <div class="booster-pill">"If Neem Karoli Baba were here today, he'd tell me to ______"</div>
+        <div class="booster-pill">"My grandmother's favourite temple is ______ because ______"</div>
+      </div>
+    </div>
+    <div class="booster-group">
+      <h3>Giveaway / Contest Mechanics</h3>
+      <div class="booster-pills">
+        <div class="booster-pill"><strong>Vel Vel Contest —</strong> Post a photo of your last Murugan darshan with #DivineTourismVel, tag 2 friends. Winner gets ₹5,000 off their next Arupadai Veedu package.</div>
+        <div class="booster-pill"><strong>Kainchi Memories —</strong> Share your Kainchi Dham story in comments. Best 3 win a free "Hanuman Chalisa" booklet + rudraksha mala set.</div>
+        <div class="booster-pill"><strong>Senior Yatra Sponsor —</strong> Nominate a senior couple who couldn't afford yatra. One nomination gets a 50% subsidised package.</div>
+      </div>
+    </div>
+    <div class="booster-group">
+      <h3>UGC / Collab Prompts</h3>
+      <div class="booster-pills">
+        <div class="booster-pill"><strong>1 —</strong> "Record a 30-sec reel of your favourite aarti moment from any Murugan temple. We'll feature the top 5 on our grid."</div>
+        <div class="booster-pill"><strong>2 —</strong> "Send us your Kainchi Dham photo + one sentence on what Maharaj-ji means to you. DM 'KAINCHI' to participate."</div>
+        <div class="booster-pill"><strong>3 —</strong> "Tag @divinetourism in any temple post from your yatra — we repost every week on 'Devotee Fridays'."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE OPTIMIZATION ============ -->
+<section id="profile-opt">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>🔧 Profile Optimization</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <h3 style="color:var(--maroon);margin-bottom:10px;">Instagram Bio (150 chars)</h3>
+    <div class="profile-preview">
+      <div class="handle">@divinetourism</div>
+      <div class="bio">🕉️ Curated spiritual yatras since 2009
+Arupadai Veedu · Kainchi Dham · Chardham
+📍 Chennai · Senior-friendly · Custom groups
+👇 Book May departures</div>
+    </div>
+
+    <h3 style="color:var(--maroon);margin:24px 0 10px;">Facebook About (first 2 lines)</h3>
+    <div class="profile-preview">
+      <div class="bio">Premium spiritual tour specialists — Neem Karoli Baba Kainchi Dham, Lord Murugan's six sacred abodes, and Chardham Yatra.
+Trusted by 10,000+ pilgrim families across India and overseas since 2009.</div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <h3 style="color:var(--maroon);margin-bottom:8px;">Profile Photo / Logo</h3>
+      <p style="font-size:14px;color:var(--ink-soft)">Wordmark logo on saffron gradient circle. Add a subtle om or vel motif. Ensure legibility at 32px on Instagram. Avoid photo-based profile images — they get lost at thumbnail size.</p>
+    </div>
+
+    <div style="margin-top:20px;">
+      <h3 style="color:var(--maroon);margin-bottom:8px;">Link-in-Bio Strategy</h3>
+      <p style="font-size:14px;color:var(--ink-soft)">Use <strong>Stan Store</strong> or <strong>Beacons</strong>. Top 3 links: (1) May–June Tour Calendar, (2) "Plan My Yatra" WhatsApp form, (3) Downloadable Arupadai Veedu PDF guide as lead magnet.</p>
+    </div>
+
+    <div style="margin-top:20px;">
+      <h3 style="color:var(--maroon);margin-bottom:8px;">Instagram Highlights — 5 Covers</h3>
+      <ul style="font-size:14px;color:var(--ink-soft);padding-left:20px;line-height:1.9;">
+        <li><strong>Arupadai</strong> — temple-by-temple story highlights</li>
+        <li><strong>Kainchi</strong> — Neem Karoli Baba ashram footage</li>
+        <li><strong>Pilgrims</strong> — devotee testimonials</li>
+        <li><strong>Tips</strong> — yatra packing, dress codes, timings</li>
+        <li><strong>Book</strong> — current packages & prices</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section id="checklist-section">
+  <div class="section-head" onclick="toggleSection(this)">
+    <h2>✅ Quick-Start Checklist</h2>
+    <span class="toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <ul class="checklist" id="checklist"></ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>Divine Tourism India — May 2026 Social Media Plan</strong><br>
+  Prepared April 24, 2026 · 28 pieces of content · Built for devotees, designed for results<br>
+  <span style="opacity:0.7;margin-top:8px;display:inline-block;">🕉️ सर्वं विष्णुमयं जगत् 🕉️</span>
+</footer>
+
+<!-- ============ DAY PANEL ============ -->
+<div class="panel-backdrop" id="panel-backdrop" onclick="closePanel()"></div>
+<div class="day-panel" id="day-panel">
+  <div class="panel-head">
+    <div class="panel-nav">
+      <button onclick="navDay(-1)">◀</button>
+      <button class="panel-close" onclick="closePanel()">✕</button>
+      <button onclick="navDay(1)">▶</button>
+    </div>
+    <h3 id="panel-type">CONTENT</h3>
+    <div class="panel-title" id="panel-title">Day</div>
+    <div class="panel-meta" id="panel-meta"></div>
+    <div class="panel-status-row">
+      <button onclick="setStatus('not_started')" data-status-btn="not_started">📋 Not Started</button>
+      <button onclick="setStatus('in_progress')" data-status-btn="in_progress">✏️ In Progress</button>
+      <button onclick="setStatus('scheduled')" data-status-btn="scheduled">🗓 Scheduled</button>
+      <button onclick="setStatus('published')" data-status-btn="published">✅ Published</button>
+      <button onclick="setStatus('on_hold')" data-status-btn="on_hold">⏸ On Hold</button>
+    </div>
+  </div>
+  <div class="panel-tabs">
+    <button class="panel-tab active" onclick="switchTab(event, 'brief')">Brief</button>
+    <button class="panel-tab" onclick="switchTab(event, 'copy')">Copy</button>
+    <button class="panel-tab" onclick="switchTab(event, 'schedule')">Schedule</button>
+    <button class="panel-tab" onclick="switchTab(event, 'perf')">Performance</button>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</div>
+
+<script id="calendar-data" type="application/json">
+[{"day": 1, "date": "Friday, May 1, 2026", "dow": "Fri", "format": "carousel", "type_label": "Educational / Intro", "concept_short": "Who we are — 17 years of sacred journeys", "platform": "Instagram + Facebook", "time": "7:30 AM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Carousel — 7 slides", "visual_style": "Warm film grain texture, ivory cream backgrounds with saffron & maroon accents. Vintage-travel-journal aesthetic with hand-torn paper edges.", "scene": "Slide 1 hero image: sunrise silhouette of pilgrim at Thiruthani temple steps, shot at golden hour. Remaining slides mix archival-look photos with text cards. Use Cormorant Garamond for display text, Jost for body.", "palette": ["#D97706", "#7B2D26", "#FAF6EE"], "slides": ["SLIDE 1 (Hook): 'Since 2009, we've walked 10,000 families to the feet of God.' — full-bleed sunrise image, ivory text overlay bottom-left", "SLIDE 2: 'We started with one question: Why is pilgrimage so hard to plan?' — text card on cream, saffron border", "SLIDE 3: 'Arupadai Veedu — six abodes of Lord Murugan. Kainchi Dham — the Baba who told us SUB EK.' — collage of 3 temple photos", "SLIDE 4: 'Senior-friendly transport. Vegetarian meals. Temple-protocol guides who speak Tamil, English, Hindi.' — icon row on ivory", "SLIDE 5: 'From Chennai to the Himalayas. From Palani steps to Nainital forests.' — map illustration", "SLIDE 6: '17 years. One promise — you focus on darshan. We handle everything else.' — bold text card, saffron background", "SLIDE 7 (CTA): 'Tell us where the divine is calling you. Link in bio.' — saffron card with WhatsApp icon"], "design": "Dimensions: 1080×1350. Logo bottom-right each slide. Consistent 48px side padding."}, "caption": "17 years of walking with devotees to the feet of God. 🙏\n\nWhen we began in 2009, one question haunted us: why is pilgrimage so hard to plan?\n\nSince then — 10,000+ families, hundreds of Arupadai Veedu journeys, quiet mornings at Kainchi Dham, sunrise at Kedarnath.\n\nOur promise has never changed. You focus on darshan. We handle everything else.\n\nSwipe through our story → and if the divine is calling, tell us where. Link in bio to plan your May or June yatra.\n\nOm Saravana Bhava. 🕉️\n\n— Team Divine Tourism", "first_comment": "Save this post for later 🪔 Which temple is calling you first? Tell us in the comments ↓", "hashtags": {"niche": ["#arupadaiveedu", "#kainchidham", "#chennaipilgrimage", "#divineTourismIndia", "#muruganpilgrimage"], "mid": ["#spiritualjourney", "#templesofindia", "#pilgrimagetour", "#southindiatemples", "#neemkarolibaba", "#hindutemples", "#spiritualtravel"], "broad": ["#india", "#travel", "#incredibleindia", "#faith", "#devotion"]}, "link": "Link in bio → WhatsApp form for May/June tour enquiries", "schedule_rationale": "Friday morning — working professionals planning weekend spiritual reading, ideal for a brand-introduction carousel that gets saved.", "cadence": "Post 1 of 7 this week", "goal": "Profile visits + Saves", "metrics": "Aim for 5%+ save rate on brand-story carousels. Target 40+ profile visits from first 24 hours.", "tip": "Pin this to profile top for all of May — it's the evergreen 'who we are' piece new visitors will see first."}, {"day": 2, "date": "Saturday, May 2, 2026", "dow": "Sat", "format": "static", "type_label": "Seasonal / Akshaya Tritiya", "concept_short": "Akshaya Tritiya — start your yatra on an auspicious day", "platform": "Instagram + Facebook", "time": "6:30 AM IST", "pillar": "Devotional Culture", "brief": {"format": "Static single image", "visual_style": "Flat-lay aesthetic. Brass diya lit at centre, marigold petals scattered, a small Ganesh idol, a stack of old rudraksha mala on a handwoven cotton cloth. Warm overhead lighting, shadow softened.", "scene": "Shoot flat overhead on a wooden surface. Diya should be real flame. Marigolds fresh. Subtle green banana leaf edge entering frame from top-right.", "palette": ["#D97706", "#B8962E", "#7B2D26"], "text_overlay": "'Akshaya Tritiya.' in Cormorant Garamond at top. Smaller Jost line below: 'Whatever you begin today, multiplies.'", "design": "1080×1350. Logo subtle bottom centre."}, "caption": "Akshaya Tritiya — अक्षय तृतीया — the 'day that does not diminish'.\n\nScripture says whatever sacred act you begin today multiplies infinitely. A donation. A mantra. A vow. A yatra.\n\nIt is no coincidence that Lord Parashuram was born today, and that the Badri Dham portals opened on an Akshaya Tritiya long ago.\n\nIf you've been waiting for a sign to book your pilgrimage — this is it.\n\nOur May & June departure dates are open for:\n• Arupadai Veedu (3N/4D from Chennai or Bangalore)\n• Kainchi Dham + Nainital (3N/4D from Delhi)\n• Chardham Yatra (opens May 10)\n\nDM us 'YATRA' and we'll send the calendar.\n\nShubh Akshaya Tritiya. 🪔", "first_comment": "Start something sacred today — what would you begin if you knew it would multiply? 🪔", "hashtags": {"niche": ["#akshayatritiya2026", "#akshayatritiya", "#divineTourismIndia", "#muruganpilgrimage", "#kainchidhamtour"], "mid": ["#shubhmuhurat", "#hindufestival", "#auspiciousday", "#spiritualjourney", "#indianfestivals", "#faithandprayer", "#hindutemples"], "broad": ["#festival", "#tradition", "#india", "#culture", "#blessed"]}, "link": "DM 'YATRA' for May/June calendar", "schedule_rationale": "Akshaya Tritiya — early morning post at 6:30 AM catches people during their sankalpa / morning puja moment when festival posts over-index.", "cadence": "Post 2 of 7 this week", "goal": "Shares + DMs", "metrics": "Festival posts should hit 3× normal share rate. Target 30+ DM replies triggered by 'YATRA' keyword.", "tip": "Reshare to Stories with a countdown sticker: 'Last hours of Akshaya Tritiya — DM YATRA'. Festival urgency converts."}, {"day": 3, "date": "Sunday, May 3, 2026", "dow": "Sun", "format": "reel", "type_label": "Temple Lore (REEL)", "concept_short": "REEL: The 6 abodes of Murugan — 5-day circuit, ₹25,500", "platform": "Instagram Reels + YouTube Shorts", "time": "8:00 PM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Reel — 30 seconds", "visual_style": "Cinematic handheld + drone b-roll of all six temples. Colour-graded warm, slight teal shadows. Text overlays appear in Tamil first, then English, with a quick fade.", "scene": "Rapid cuts (1.5–2 sec each) between each of the six abodes. If own footage is limited, licence from stock (Pond5 has good Tamil temple b-roll) or source from past client permissions.", "palette": ["#D97706", "#1A1A1A", "#B8962E"], "duration": "30 seconds", "hook": "0–3s: Close-up slow-mo of vel (spear) being lowered into brass bowl of milk. Text: 'Six abodes. One Lord. One lifetime.'", "build": "3–27s: Six rapid cuts, 4s each — Thiruparankundram (cave entrance), Thiruchendur (ocean waves + gopuram), Palani (the 693 steps), Swamimalai (hilltop sunrise), Thiruthani (peacock feather close-up), Pazhamudircholai (forest canopy). Each with temple name in Tamil + English text overlay.", "cta_ending": "27–30s: Cut to pilgrim hands doing namaskaram with temple lamp. Text: 'Which abode calls you? DM us 🕉️'", "voiceover": "No voiceover — let the visuals and a powerful trending devotional audio carry the emotion. Check trending audio on Instagram Reels the week you post — devotional + cinematic audios rotate every 2–3 weeks.", "onscreen_text": "Temple names appear bottom-centre, 1-sec fade in/out. Final CTA text centre-screen.", "transitions": "Clean cuts synced to audio beats. No flashy swipes.", "audio": "Trending South Indian devotional cinematic track, 90–110 BPM, feminine vocals preferred (ragas that evoke bhakti + awe).", "design": "1080×1920. No logo overlay — end card handles attribution."}, "caption": "Six temples. Six stories. One unforgettable 5-day pilgrimage. 🕉️\n\nArupadai Veedu — the six sacred abodes of Lord Murugan:\n\n🏔️ Thiruparankundram — where he married Valli\n🌊 Thiruchendur — where he defeated Surapadman\n⛰️ Palani — 693 steps to the bronze-staffed Dhandayuthapani\n🕉️ Swamimalai — where the son taught the father\n🙏 Thiruthani — the peace after battle\n🌿 Pazhamudircholai — where wisdom ripens in the forest\n\nOur 5-day Arupadai Veedu circuit — Senior & Parent Friendly — starts from ₹25,500 per person. All six abodes. Private AC vehicles. Chennai pickup & drop.\n\nSave this reel. Send to the elder who's been meaning to go. 🙏\n\n👉 Link in bio to book May–July departures.", "first_comment": "Tag 3 people who'd walk this with you 🙏 Our Arupadai Veedu 5D package is ₹25,500/pp — link in bio for the full itinerary.", "hashtags": {"niche": ["#arupadaiveedu", "#muruganpilgrimage", "#palanimurugan", "#thiruchendur", "#swamimalai"], "mid": ["#southindiatemples", "#tamilnadutemples", "#hindutemples", "#spiritualreels", "#devotionalreels", "#templeheritage", "#muruganbhakti"], "broad": ["#reelsinstagram", "#viralreels", "#india", "#faith", "#incredibleindia"]}, "link": "Link in bio → 5-day Arupadai Veedu package (₹25,500/pp)", "schedule_rationale": "Sunday 8 PM — peak family couch-scrolling time, devotional reels get highest weekend shares (families forward to WhatsApp groups).", "cadence": "Post 3 of 7 this week (Reel 1 of 8 for May)", "goal": "Reach + Shares", "metrics": "Target 50K+ reach from Tamil diaspora + Chennai geo. Track saves (aim 8%+) — Arupadai reels tend to be saved for 'someday' trips. DMs about pricing = highest-intent lead signal.", "tip": "In the first 30 minutes after posting, reply to every comment with a specific legend about that devotee's chosen temple — depth of comment-thread boosts ranking."}, {"day": 4, "date": "Monday, May 4, 2026", "dow": "Mon", "format": "carousel", "type_label": "Educational Guide", "concept_short": "What to pack for Arupadai Veedu (senior-friendly)", "platform": "Instagram + Facebook", "time": "7:00 AM IST", "pillar": "Practical Yatra Guides", "brief": {"format": "Carousel — 8 slides", "visual_style": "Illustrated checklist style. Hand-drawn icon set on cream background. Warm saffron outline illustrations — no photography.", "scene": "Design-only; commission or generate a consistent icon family. Consistent 80px icons, always centred on slide.", "palette": ["#D97706", "#1A1A1A", "#FAF6EE"], "slides": ["SLIDE 1 (Hook): 'Arupadai Veedu — Pack Like a Pro. Senior-Friendly Edition.' — large illustrated suitcase icon", "SLIDE 2: 'Traditional veshti/dhoti for men. Cotton saree/churidar for women. Temple dress codes are strict.'", "SLIDE 3: 'Two pairs of comfortable walking slippers — you'll leave them at the gate and need a backup.'", "SLIDE 4: 'Knee support + walking stick if climbing Palani's 693 steps is in your plan.'", "SLIDE 5: 'A light shawl — stone temple floors at 5 AM are cold even in May.'", "SLIDE 6: 'Small cloth bag for prasadam — avoid plastic at every temple.'", "SLIDE 7: 'Medicines labelled. BP monitor. Water + ORS. Light snacks between temples.'", "SLIDE 8 (CTA): 'Save this + send to the family member planning the yatra. 📌'"], "design": "1080×1350. Handwritten-style headline font + clean body. Same soft illustration style across all 8."}, "caption": "A pilgrimage is not a vacation. And Arupadai Veedu in May heat tests even the fittest devotee. 🌞\n\nAfter 17 years of guiding yatras — especially with senior citizens — here's exactly what we tell every family to pack.\n\n(Swipe → because Slide 4 is the one most people forget.)\n\nAnd if you're travelling with aged parents: please save this, send it to them, and make sure their medicines + BP monitor are on top of the bag, not bottom.\n\nWe handle transport, hotels, priest coordination, darshan queuing. You handle the packing.\n\nDM 'GUIDE' for our free senior-friendly Arupadai Veedu PDF guide — sent in 1 minute.\n\n🙏", "first_comment": "📌 Save this. What else do you always pack? Add to the list for fellow devotees ↓", "hashtags": {"niche": ["#arupadaiveedupacking", "#yatrapreparation", "#muruganpilgrimage", "#seniorfriendlytravel", "#chennaitravels"], "mid": ["#templetour", "#pilgrimagetips", "#southindiatravel", "#spiritualjourney", "#tamilnadutourism", "#indiatemples", "#faithtravel"], "broad": ["#travel", "#travelguide", "#packinglist", "#india", "#familytravel"]}, "link": "DM 'GUIDE' for free PDF", "schedule_rationale": "Monday 7 AM — start-of-week planning mindset, save-heavy practical content performs best Mon–Tue mornings.", "cadence": "Post 4 of 7 this week", "goal": "Saves + DMs", "metrics": "Educational carousels should hit 5%+ save rate. Track 'GUIDE' DM volume as lead indicator.", "tip": "Post a 24-hr Story poll: 'Which slide surprised you most?' with a slider — drives people back to view the carousel again."}, {"day": 5, "date": "Tuesday, May 5, 2026", "dow": "Tue", "format": "static", "type_label": "Devotional (Murugan day)", "concept_short": "Tuesday = Murugan day — Vel Vel Muruga", "platform": "Instagram + Facebook", "time": "6:00 AM IST", "pillar": "Devotional Culture", "brief": {"format": "Static image", "visual_style": "Single heroic close-up of a vel (golden spear) against out-of-focus sandalwood-red fabric. Natural morning light from the left. Shallow depth of field.", "scene": "Shoot the brass vel held vertical against a maroon silk fabric backdrop, lit by one window at 6 AM. Aperture wide open. No props. Let the weapon speak.", "palette": ["#B8962E", "#7B2D26", "#1A1A1A"], "text_overlay": "Cormorant Garamond centre: 'Vel Vel Muruga' in saffron. Below in small Jost: 'Tuesdays belong to Him.'", "design": "1080×1350. No logo — stark, devotional."}, "caption": "Tuesdays belong to Him.\n\nVel Vel Muruga. Vel Vel Vetri Vel. வேல் வேல் முருகா.\n\nThe vel is not a weapon. It is wisdom sharpened into a point — the discrimination that slices through ego, illusion, and the Surapadma in each of us.\n\nThis Tuesday, wherever you are — at a desk in Chennai, a kitchen in Dubai, a hospital in London — whisper it three times.\n\nVel Vel Muruga.\nVel Vel Muruga.\nVel Vel Muruga.\n\nHe hears. He always hears.\n\n🕉️", "first_comment": "🔱 Say it with us. Vel Vel Muruga — drop it below.", "hashtags": {"niche": ["#velvelmuruga", "#muruganbhakti", "#tuesdaypost", "#arupadaiveedu", "#velmuruga"], "mid": ["#murugandevotion", "#hindudevotion", "#tamilgod", "#spiritualtuesday", "#bhakti", "#muruganlove", "#omsaravanabhava"], "broad": ["#devotion", "#faith", "#prayer", "#spirituality", "#hindu"]}, "link": "No link — pure devotional", "schedule_rationale": "Tuesday 6 AM — Murugan devotees' morning prayer hour. Devotional single-image posts over-index during 5–7 AM on Tuesdays.", "cadence": "Post 5 of 7 this week", "goal": "Engagement (comments + shares)", "metrics": "Comment rate should exceed 1.5% — devotees type 'Vel Vel' in the comments. Share rate > 2% to WhatsApp.", "tip": "Do not add promotional language to this post. Pure bhakti posts perform better with zero sell. Save the offer push for tomorrow."}, {"day": 6, "date": "Wednesday, May 6, 2026", "dow": "Wed", "format": "carousel", "type_label": "Educational — Kainchi intro", "concept_short": "Kainchi Dham 101 — who was Neem Karoli Baba?", "platform": "Instagram + Facebook", "time": "7:30 AM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Carousel — 6 slides", "visual_style": "Muted mountain photography (Kainchi valley, pine forests, Kumaon hills) with text-card overlays in cream + maroon. Misty, contemplative mood.", "scene": "Source or licence actual Kainchi Dham ashram photos. For the portrait of Maharaj-ji, use the iconic seated-in-blanket image (publicly widespread, but add attribution). Slides 2 & 5 are text cards on cream.", "palette": ["#7B2D26", "#FAF6EE", "#166534"], "slides": ["SLIDE 1 (Hook): 'Kainchi Dham. Steve Jobs came here. So did Zuckerberg. So did a Tamil grandmother from Mylapore. Why?' — hero mountain image", "SLIDE 2: 'Neem Karoli Baba — called Maharaj-ji by devotees — left his body in 1973. His ashram in the Kumaon hills is more alive than ever.' — text card", "SLIDE 3: 'His teaching was four words: SUB EK. All is One. Love everyone. Serve everyone. Remember God. Tell the truth.' — Maharaj-ji portrait", "SLIDE 4: 'He never wrote a book. He barely gave lectures. Yet Ram Dass's 'Be Here Now' — which shaped an entire generation — was dictated at his feet.' — book on cloth photo", "SLIDE 5: 'Every devotee who returns from Kainchi says the same thing — something happened there I cannot explain.' — text card, quote style", "SLIDE 6 (CTA): 'Kainchi Dham + Nainital · 3N/4D from Delhi · Monthly departures · Link in bio to plan yours.'"], "design": "1080×1350. Cream borders on text cards. Keep photos soft, never over-saturated."}, "caption": "The world's most famous unsolicited spiritual destination. 🌲\n\nA small ashram in the Kumaon hills that Steve Jobs flew to in 1974 before founding Apple. That Mark Zuckerberg visited before launching Facebook. That Julia Roberts credits for her Hindu conversion.\n\nBut here's the truth most Western retellings miss — Kainchi Dham is first, and always, a place for Indian devotees.\n\nFor Tamil grandmothers who've read about 'Maharaj-ji' their whole lives.\nFor Bengali families who grew up on Hanuman Chalisa.\nFor Delhi couples who needed to slow down.\n\nSwipe through his story → and if 'SUB EK' resonates, our next Kainchi + Nainital departure is June 12. Link in bio.\n\n🙏 Jai Maharaj-ji.", "first_comment": "Have you been to Kainchi Dham? Drop a 🌲 and tell us what changed for you.", "hashtags": {"niche": ["#kainchidham", "#neemkarolibaba", "#kainchidhamashram", "#mahrajji", "#nainitaltravel"], "mid": ["#spiritualjourney", "#uttarakhandtourism", "#himalayanspirituality", "#hanumanji", "#ramdass", "#behere now", "#indianspirituality"], "broad": ["#india", "#mountains", "#spiritual", "#faith", "#travel"]}, "link": "Link in bio → Kainchi Dham tour page", "schedule_rationale": "Wednesday mid-week educational slot — people mentally checked out of work, primed for long-form spiritual reading.", "cadence": "Post 6 of 7 this week", "goal": "Saves + Profile Visits", "metrics": "Kainchi content attracts NRI audience — watch for profile visits from US/UK cities in analytics.", "tip": "Kainchi content consistently outperforms Arupadai among the 35–50 urban Indian segment. Note which age band saves most and tune Week 4 accordingly."}, {"day": 7, "date": "Friday, May 8, 2026", "dow": "Fri", "format": "reel", "type_label": "Devotee Story (REEL)", "concept_short": "REEL: 'My mother's last wish was Palani'", "platform": "Instagram Reels + YouTube Shorts", "time": "7:30 PM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Reel — 45 seconds", "visual_style": "Documentary-style testimonial. Subject speaks to camera, warm natural light, temple b-roll cut between speech. Shot vertical.", "scene": "Interview a real past client (with signed consent) in their home living room OR at the Palani base. Pooja room / family photos in background. B-roll: Palani hill winch, 693 steps, aarti, the client praying.", "palette": ["#D97706", "#FAF6EE", "#1A1A1A"], "duration": "45s", "hook": "0–3s: Close-up of weathered hands holding a framed photo of a mother. Voiceover: 'My mother told me once — before I die, take me to Palani.'", "build": "3–38s: Client speaks — 'She never made it. She passed in 2023. So last year, I took her ashes. I climbed those 693 steps with her in a small clay pot. I gave her the darshan she waited 70 years for. Divine Tourism didn't just arrange a trip. They understood.'", "cta_ending": "38–45s: Slow pan across temple gopuram. Text overlay: 'We don't run tours. We carry promises. Link in bio.'", "voiceover": "Client's own voice, natural, unscripted as much as possible. No music under the speech — let the emotion breathe. Music only on b-roll and final card.", "onscreen_text": "Minimal subtitles (yellow, sans-serif) for accessibility. Final card text: 'Divine Tourism — We carry promises.'", "transitions": "Cross-dissolves between testimony and b-roll. No jump cuts on face.", "audio": "Under b-roll: soft South Indian flute raga, mid-tempo, melancholic-hopeful. Check current trending emotional audios the week of posting.", "design": "1080×1920. Closed captions burned in."}, "caption": "\"My mother told me once — before I die, take me to Palani.\"\n\nShe didn't make it.\n\nSo Venkatesh Sir brought her ashes. 693 steps. A clay pot. A 70-year-old vow finally kept.\n\nThis is not a client story. This is every Tamil family's story. The vow we make to our parents. The vow we keep, sometimes too late.\n\nIf there's a pilgrimage your parents have been waiting for — please don't wait.\n\nArupadai Veedu tours from Chennai, Bangalore, Hyderabad — Link in bio.\n\n🙏 For Amma. For Appa. For the promise. 🙏\n\n🕉️ We run this every month. Our 5-day Arupadai Veedu circuit (Senior & Parent Friendly) starts at ₹25,500 per person — Chennai pickup, all six abodes, private AC. Link in bio.", "first_comment": "Tell us in the comments — what pilgrimage are your parents still waiting for? ↓", "hashtags": {"niche": ["#palanimurugan", "#arupadaiveedu", "#amma", "#muruganpilgrimage", "#palanihilltemple"], "mid": ["#tamilfamily", "#parentslove", "#spiritualjourney", "#devoteestory", "#senioryatra", "#faithstories", "#southindiatemples"], "broad": ["#family", "#emotional", "#reels", "#india", "#love"]}, "link": "Link in bio → Senior-friendly Arupadai Veedu tours", "schedule_rationale": "Friday evening 7:30 PM — emotional content peaks for share-rate when families are reunited after work. Testimonial reels get forwarded to parents' WhatsApp.", "cadence": "Post 1 of 7 this week (Reel 2 of 8)", "goal": "Shares + DMs", "metrics": "Testimonial reels should hit 3%+ share rate. Watch for DMs mentioning parents — convert softly.", "tip": "Testimonials work 10× better when the client is real and you tag them. Always get written permission to tag + repost. Offer 10% off next yatra as thanks."}, {"day": 8, "date": "Saturday, May 9, 2026", "dow": "Sat", "format": "static", "type_label": "Social Proof — Review", "concept_short": "Google review testimonial — Malathi family", "platform": "Instagram + Facebook", "time": "11:00 AM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Static image — review card", "visual_style": "Clean review-card template. Soft cream background. 5 saffron stars at top. Name + city in small type. Review text in handwritten-style font. Photo of family in corner (with consent).", "scene": "Design-only. Use photo supplied by client (Malathi + family) at Swamimalai temple. Frame with a thin saffron border.", "palette": ["#D97706", "#FAF6EE", "#7B2D26"], "text_overlay": "★★★★★ at top. Review card below. Bottom: 'Divine Tourism · @divinetourism' logo lockup.", "design": "1080×1350. Review text max 60 words for legibility."}, "caption": "\"We did the full Arupadai Veedu circuit with our three children and my in-laws — aged 72 and 78. Honestly, I was scared. But Divine Tourism's driver knew every temple, helped my father-in-law at every step, and the hotels were exactly as promised. My children still talk about Thiruchendur. Thank you for making faith accessible for three generations.\"\n\n— Malathi R., Coimbatore · April 2026\n\nWhen we say senior-friendly, multi-generational, faith-first — this is what we mean.\n\nYour family's yatra deserves this kind of care. Link in bio to plan.\n\n🙏", "first_comment": "Have you travelled with us? Drop your temple + year below — we love hearing the stories 🙏", "hashtags": {"niche": ["#divineTourismIndia", "#arupadaiveedureview", "#muruganpilgrimage", "#familyyatra", "#senioryatra"], "mid": ["#customerreview", "#happyclient", "#testimonial", "#templetour", "#southindiatemples", "#tamilnadutourism", "#spiritualtravel"], "broad": ["#review", "#recommended", "#trusted", "#family", "#india"]}, "link": "Link in bio → Read more reviews", "schedule_rationale": "Saturday 11 AM — late morning family scroll, when adult children often research parent yatras.", "cadence": "Post 2 of 7 this week", "goal": "Trust + Profile visits", "metrics": "Watch profile visit rate — review posts should drive 2× normal profile-visit conversions.", "tip": "Tag Malathi R. in the post (with her permission). Her own network reshares = free reach."}, {"day": 9, "date": "Sunday, May 10, 2026", "dow": "Sun", "format": "reel", "type_label": "Ganga Saptami · Varanasi Package", "concept_short": "REEL: Ganga Saptami — Kasi calls you — ₹27,500 / 4 days", "platform": "Instagram + Facebook + YouTube Shorts", "time": "6:30 AM IST", "pillar": "Seasonal Hook + Package Spotlight", "brief": {"format": "Reel — 40 seconds vertical 9:16", "visual_style": "Golden-hour Ganga footage. Warm amber + saffron grading. Film-grain texture. Slow cinematic pans.", "scene": "Open on dawn aarti at Dashashwamedh Ghat. Cut to rowboat POV gliding past ghats. Close on lit diyas floating on the water.", "palette": ["#D97706", "#7B2D26", "#FAF6EE"], "duration": "40 seconds", "hook": "First 3 sec: whispered voice — 'Today Ganga came to earth.' — text overlay: GANGA SAPTAMI · MAY 10", "build": "Sec 3–10: Boat approaches aarti ghat. Priests wave fire-pots. Sec 10–22: Voiceover explains — 'On Ganga Saptami, she descended from Shiva's matted locks. Kasi is where devotees still meet her.' Sec 22–35: Cut montage — Kashi Vishwanath corridor, Manikarnika steps, morning yoga on ghats. Sec 35–40: Product card: '4-day Kasi journey · ₹27,500 · private AC, 3-star hotel, dawn + dusk Ganga boat rides.'", "cta_ending": "End card: 'Walk the oldest living city with us. Link in bio.' + Divine Tourism logo", "voiceover": "Calm male baritone in English, Sanskrit mantra 'Gange cha Yamune chaiva' whispered under the visual.", "onscreen_text": "Minimal. Key moments: 'GANGA SAPTAMI · MAY 10' (intro), 'KASI · 4 DAYS · ₹27,500' (end product card).", "transitions": "Slow cross-fades between ghats. Film-burn transition into product card.", "audio": "Reels Music or YouTube Audio Library: low ambient drone + distant temple bells. Add subtle Ganga aarti bell at sec 10. Keep voiceover clean.", "design": "Product card in Cormorant Garamond + Jost. Saffron border. Price in gold."}, "caption": "🌊 Today Ganga came to earth.\n\nGanga Saptami — the day the holy river descended from Lord Shiva's matted locks to bless this world.\n\nWhere does she still live most fully? Kasi. Varanasi. The oldest living city on earth.\n\nOur 4-day Kasi spiritual journey:\n🚤 Dawn Ganga boat ride with silent prayer\n🔔 Evening aarti at Dashashwamedh Ghat (front-row)\n🕉️ Kashi Vishwanath corridor darshan\n🛕 Sarnath Buddhist site (where Buddha taught first)\n🏨 3-star AC hotel · daily breakfast · private AC car\n\n₹27,500 per person. Early Bird before May 31 — ₹24,500.\n\nOn Ganga Saptami, she calls. When will you answer?\n\n🙏 Link in bio to plan your Kasi yatra.", "first_comment": "Our Kasi package runs weekly through October. Flexible dates. DM 'KASI' + travel month for itinerary.", "hashtags": ["GangaSaptami", "KasiVishwanath", "VaranasiTrip", "KashiTour", "DivineTourism", "VaranasiYatra", "GangaAarti", "KashiVishwanathCorridor", "SpiritualJourney", "IndianPilgrimage", "SacredRivers", "HinduYatra", "Varanasi", "Kasi", "Ganga", "PilgrimageIndia", "Travel"], "link": "Link in bio → 4-day Kasi (Varanasi) package (₹27,500/pp · Early Bird ₹24,500)", "schedule_rationale": "Sunday 6:30 AM IST — dawn-aligned with Ganga Saptami. Posting before sunrise catches early-rising devotees (our older audience) when they check phones after puja. Reels published early perform best Sundays.", "cadence": "Reel 3 of 8 · Week 2 flagship seasonal post", "goal": "AWARENESS + LEAD", "metrics": "Aim 75K+ reach (festival hook multiplies distribution). Target 20+ saves and 10+ 'KASI' DMs in first 24 hours. Cross-post as YouTube Short for Varanasi search SEO.", "tip": "Ganga Saptami reels have huge share potential — most Indian tour operators don't post on this festival. Being the brand that did = long-tail save/share gains for years."}, {"day": 10, "date": "Monday, May 11, 2026", "dow": "Mon", "format": "carousel", "type_label": "Package Spotlight — Navagraha", "concept_short": "Navagraha Divine Circuit — 9 temples, 3 days, ₹17,500", "platform": "Instagram + Facebook", "time": "10:00 AM IST", "pillar": "Tamil Nadu Short-Haul Spotlight", "brief": {"format": "Carousel — 9 slides (one per Navagraha planet)", "visual_style": "Each slide features a different planet-deity color: Sun (gold), Moon (silver-white), Mars (red), Mercury (green), Jupiter (yellow), Venus (cream-pink), Saturn (navy), Rahu (indigo), Ketu (smoke-grey). Cormorant Garamond for deity names.", "scene": "Slide 1 hero: aerial photo of a temple gopuram at golden hour overlaid with '9 PLANETS · 9 TEMPLES · 3 DAYS'. Remaining 8 slides one-per-planet with temple photo + deity name + 'what devotees come for' caption.", "palette": ["#D97706", "#7B2D26", "#FAF6EE", "#C9A227"], "slides": ["SLIDE 1 (Hook): 'Nine planets. Nine temples. Three days. One planetary reset.' — saffron text on ivory, aerial gopuram below", "SLIDE 2 — SURYA (Sun): Suryanar Koil, Kumbakonam. 'For leadership, clarity, father's blessing.' Gold accent.", "SLIDE 3 — CHANDRA (Moon): Thingalur. 'For emotional balance, mother's peace.' Silver-white accent.", "SLIDE 4 — ANGARAKA (Mars): Vaitheeswaran Koil. 'For courage, overcoming obstacles, health.' Red accent.", "SLIDE 5 — BUDHAN (Mercury): Thiruvenkadu. 'For intellect, business success, speech.' Green accent.", "SLIDE 6 — GURU (Jupiter): Alangudi. 'For wisdom, marriage, children.' Yellow accent.", "SLIDE 7 — SHUKRA (Venus): Kanjanur. 'For love, prosperity, artistic gifts.' Pink-cream accent.", "SLIDE 8 — SHANI (Saturn): Thirunallar. 'For karmic relief, patience.' Navy accent. Most-visited by far.", "SLIDE 9 (CTA): '3-day Navagraha Circuit · Private AC car from Chennai · 3-star hotel · Daily breakfast · ₹17,500 per person · Link in bio.' — saffron background white text"], "design": "Deity names in Cormorant Garamond 42px. Body in Jost 18px. Temple photos full-bleed with 15% dark overlay for text legibility."}, "caption": "🪐 Nine planets govern your chart. Nine temples in Tamil Nadu heal them.\n\nThe Navagraha Circuit is Tamil Nadu's most underrated pilgrimage. Nine temples. Each one dedicated to a specific graha (planetary deity). Each one a precise ritual remedy for what's knotted in your birth chart.\n\nSaturn weighing you down? → Thirunallar.\nJupiter period starting? → Alangudi.\nMother's health bothering you? → Thingalur.\n\nOur 3-day Navagraha Circuit runs every week from Chennai:\n\n🚗 Private AC car (Sedan / SUV)\n🏨 3-star hotel · daily breakfast\n📿 All 9 temples in one looped circuit through Kumbakonam belt\n💫 Door-to-door from Chennai — no logistics stress\n\n₹17,500 per person. Great for families planning relief rituals. Ideal window: October to March — but we run it year-round.\n\nSave this carousel for when your astrologer next asks you to visit a Graha temple. 🙏\n\n🙏 Link in bio for the full 9-temple itinerary.", "first_comment": "Which planet is strongest in your chart? Comment below 🪐 To book: DM 'NAVAGRAHA' + preferred dates.", "hashtags": ["NavagrahaTemples", "NavagrahaTour", "ShaniTemple", "Thirunallar", "DivineTourism", "NavagrahaCircuit", "PlanetTemples", "TamilNaduPilgrimage", "KumbakonamTemples", "VaitheeswaranKoil", "AstrologyRemedy", "Navagrahas", "Navagraha", "Pilgrimage", "TamilNadu", "Yatra", "Chennai"], "link": "Link in bio → 3-day Navagraha Circuit package (₹17,500/pp)", "schedule_rationale": "Monday morning 10 AM IST — 'new week, planetary reset' framing lands when the audience is mentally resetting. Mondays also see heavy astrology-content browsing.", "cadence": "Post 10 of 28 · Week 2 package spotlight #1", "goal": "AWARENESS + LEAD", "metrics": "Aim 5%+ save rate (people save astrology references for later). Target 25+ profile visits and 10+ 'NAVAGRAHA' DMs. Compare to Arupadai reel — Navagraha has a different, more niche audience.", "tip": "This package is our best low-ticket entry point (₹17,500 — under most family weekend budgets). Use this post to collect leads who we then re-market to for Arupadai and Kainchi upsells."}, {"day": 11, "date": "Tuesday, May 12, 2026", "dow": "Tue", "format": "reel", "type_label": "Buddha Purnima REEL", "concept_short": "REEL: Buddha Purnima — one teaching, 20 seconds", "platform": "Instagram Reels + YouTube Shorts", "time": "6:30 AM IST", "pillar": "Devotional Culture", "brief": {"format": "Reel — 20 seconds", "visual_style": "Minimal, contemplative. Single shot of a seated Buddha statue under natural light. Candle flame slow-mo.", "scene": "Single locked-off camera. Buddha statue, probably at Sarnath or Bodh Gaya. One candle lit in front. Sunrise light streaming from one side.", "palette": ["#B8962E", "#FAF6EE", "#1A1A1A"], "duration": "20s", "hook": "0–3s: Candle flame lights (slow-mo). Text: 'Buddha Purnima.'", "build": "3–17s: Slow dolly/zoom toward Buddha face. Text appears word by word: 'Three things / cannot be long hidden — / the sun / the moon / the truth.' — Gautama Buddha", "cta_ending": "17–20s: Fade to cream card. 'May all beings be happy. May all beings be free. 🪷 Divine Tourism.'", "voiceover": "No voiceover. Soft Tibetan singing bowl at start and end.", "onscreen_text": "As described above. Jost light weight. Centred. Slow fade-ins.", "transitions": "Single continuous shot. Trust the stillness.", "audio": "Tibetan bowl + subtle wind. No melody.", "design": "1080×1920. No logo on video — end card only."}, "caption": "Buddha Purnima. 🪷\n\n\"Three things cannot be long hidden — the sun, the moon, and the truth.\" — Gautama Buddha\n\nOn the full moon of Vaisakha, the prince became a Buddha. Under a pipal tree. In Bodh Gaya. After six years of searching.\n\nAnd his first teaching, delivered at Sarnath, was this — suffering has a cause, and therefore an end.\n\nIf this teaching moves you, our Buddhist Circuit tour visits Bodh Gaya, Sarnath, Kushinagar and Lumbini — the four sites of Buddha's life. 8 nights / 9 days.\n\nDM 'BUDDHA' for the itinerary.\n\nमय्य सर्वे सन्तु सुखिनः 🙏", "first_comment": "Which teaching of the Buddha stays with you? Drop it below 🪷", "hashtags": {"niche": ["#buddhapurnima", "#buddhapurnima2026", "#bodhgayatour", "#buddhistpilgrimage", "#buddhatourism"], "mid": ["#buddhism", "#dharma", "#mettameditation", "#sarnath", "#spiritualjourney", "#peacefulmind", "#mindfulness"], "broad": ["#peace", "#wisdom", "#spiritual", "#buddha", "#reels"]}, "link": "DM 'BUDDHA' for Buddhist Circuit itinerary", "schedule_rationale": "Tuesday 6:30 AM on Buddha Purnima — morning contemplative moment, minimalist reels perform strong during meditation/reflection hours.", "cadence": "Post 5 of 7 this week (Reel 4 of 8)", "goal": "Reach + Profile Visits", "metrics": "Contemplative reels have lower share rate but higher save rate. Target 4%+ save rate.", "tip": "Cross-post as a carousel on Facebook (older audience engages less with reels there)."}, {"day": 12, "date": "Wednesday, May 13, 2026", "dow": "Wed", "format": "carousel", "type_label": "Package Spotlight — Shakti Circuit", "concept_short": "Divine Feminine Circuit — 4 Shakti temples, ₹46,500 / 4 days", "platform": "Instagram + Facebook", "time": "7:30 AM IST", "pillar": "Shakti / Divine Feminine", "brief": {"format": "Carousel — 6 slides", "visual_style": "Crimson, deep maroon, temple-red palette. Kumkum texture. Soft gold accents. Honoring the Devi aesthetic — bold but reverent.", "scene": "Slide 1 hero: Madurai Meenakshi Amman gopuram at dusk with lamps. Subsequent slides alternate temple photos + text cards on kumkum-red backgrounds.", "palette": ["#7B2D26", "#C9A227", "#FAF6EE"], "slides": ["SLIDE 1 (Hook): 'Before you pray to any god, you were in the Mother.' — white text on deep maroon, small lotus motif", "SLIDE 2 — MADURAI: 'Meenakshi Amman — the fish-eyed goddess who ruled a city.' Temple photo + 3-line legend.", "SLIDE 3 — SAMAYAPURAM: 'Mariamman — the healer of smallpox, rain-bringer, village mother.' Temple photo.", "SLIDE 4 — KANCHIPURAM: 'Kamakshi — the goddess of desire made sacred.' Golden gopuram shot.", "SLIDE 5 — CHENNAI: 'Kapaleeshwarar's consort Karpagambal — Shakti in the city.' Mylapore temple photo.", "SLIDE 6 (CTA): '4-day Divine Feminine Circuit · Chennai → Madurai → Samayapuram → Kanchipuram → Chennai · ₹46,500 per person · DM SHAKTI.' — red & gold split background"], "design": "Deity names in Cormorant Garamond 44px gold. Body in Jost 17px off-white. Each slide has a subtle embossed yantra behind the text."}, "caption": "🔺 Before you pray to any god, you were in the Mother.\n\nThe Divine Feminine Circuit — 4 days, 4 Shakti temples across Tamil Nadu's most sacred Devi shrines:\n\n🕉️ MADURAI — Meenakshi Amman, the fish-eyed goddess-queen\n🌺 SAMAYAPURAM — Mariamman, healer of disease, bringer of rain\n🌻 KANCHIPURAM — Kamakshi, desire made sacred\n🪔 CHENNAI — Karpagambal at Mylapore, Shakti in the city\n\nThis isn't just a temple tour. Each shrine is paired with a prosperity ritual performed by temple priests — for business, fertility, health, relationship healing. Done right, in the right shrine, at the right time.\n\nWhat's included:\n✨ 4 days · Chennai → Madurai → Samayapuram → Kanchipuram → Chennai\n🚗 Private AC vehicle throughout\n🏨 3-star AC hotels\n📿 Priest-led rituals at each Shakti peetha\n🍲 Prasadam offerings & thirtham collection\n\n₹46,500 per person. Ideal for women's groups, mother-daughter travel, and those navigating a life transition (new marriage, childbirth year, career shift, grief).\n\nSave this. Share with the woman in your life who needs the Mother right now. 🙏\n\n🙏 Link in bio. DM 'SHAKTI' for dates.", "first_comment": "Tag the woman who should read this 🌺 Our Shakti circuit runs every 3 weeks. Group of 4 women? Private departures available. DM to plan.", "hashtags": ["ShaktiTemples", "DivineFeminine", "MeenakshiAmman", "Kamakshi", "DivineTourism", "ShaktiPeetha", "GoddessTemples", "MariammanTemple", "KanchiKamakshi", "TamilNaduTemples", "ShaktiYatra", "DeviDarshan", "Shakti", "Goddess", "WomensYatra", "Madurai", "Kanchipuram"], "link": "Link in bio → 4-day Divine Feminine (Shakti) Circuit (₹46,500/pp)", "schedule_rationale": "Wednesday 7:30 AM IST — midweek energy shift, plus Wednesday traditionally dedicated to Durga/Mother goddess in many South Indian households. Morning post catches commute scrolling.", "cadence": "Post 12 of 28 · Week 2 package spotlight #2", "goal": "AWARENESS + LEAD", "metrics": "Target 8%+ save rate (save-heavy demographic = women 30+). Track female audience % shift in Insights next week. Premium price point — expect fewer but higher-quality DMs.", "tip": "This is premium-tier (₹46K+) — prioritize saves and quality DMs over volume. One booking covers 2–3 Navagraha bookings in revenue. Post-engagement, send a follow-up carousel on 'what a Shakti ritual actually involves' next month."}, {"day": 13, "date": "Friday, May 15, 2026", "dow": "Fri", "format": "static", "type_label": "Flagship — Kainchi Sthapana (morning)", "concept_short": "Kainchi Sthapana Divas — Maharaj-ji established his ashram", "platform": "Instagram + Facebook", "time": "6:00 AM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Static image", "visual_style": "Iconic photograph of Kainchi Dham's main gate at dawn, mist rising from the valley, two priest-attendants preparing flowers. Warm morning saffron light.", "scene": "If own footage isn't available, licence from established Kainchi photography. The mandatory visual cue: the two hairpin bends ('kainchi' = scissors in Hindi) that give the ashram its name.", "palette": ["#D97706", "#166534", "#FAF6EE"], "text_overlay": "Top: 'Kainchi Sthapana Divas' in Cormorant. Below: '15 May · Since 1964'. Bottom-right: 🙏", "design": "1080×1350. Minimal, reverent."}, "caption": "Kainchi Sthapana Divas. 🙏\n\nOn this day in 1964, Neem Karoli Baba Maharaj-ji established the Hanuman temple that has become Kainchi Dham — the 'scissors ashram' named for the two hairpin bends in the Kumaon road.\n\nSixty-two years later, devotees from every country on earth still come.\n\nThey climb the narrow staircase. They touch the feet of the Hanuman murti He consecrated. They sit in His small room. They say nothing. They leave changed.\n\nToday, if you cannot be there in person — pause wherever you are. Chant the Hanuman Chalisa once. And say, softly —\n\n'Sub Ek.'\n\nAll is One.\n\n🙏 Jai Maharaj-ji. Jai Bajrangbali.", "first_comment": "Jai Maharaj-ji 🙏 What would you say to Him today if you could?", "hashtags": {"niche": ["#kainchisthapana", "#kainchidham", "#neemkarolibaba", "#maharajji", "#hanumanji"], "mid": ["#kainchidhamashram", "#bhaktiyoga", "#spiritualgurus", "#himalayanspirituality", "#uttarakhand", "#ramdass", "#subek"], "broad": ["#spiritual", "#faith", "#devotion", "#india", "#guru"]}, "link": "Link in bio → Kainchi Dham tours", "schedule_rationale": "Kainchi Sthapana Divas dawn — ashram morning aarti timing, flagship day = morning post for Kainchi devotees + evening reel for broader reach.", "cadence": "Post 1 of 7 this week (Flagship Day — 2 posts)", "goal": "Shares (WhatsApp forwards) + Profile Visits", "metrics": "Kainchi flagship posts should hit 10K+ reach. Watch for US + UK profile visits.", "tip": "Post a Story countdown to the evening reel: 'Kainchi Sthapana reel coming at 8 PM — tap reminder 🔔'"}, {"day": 14, "date": "Friday, May 15, 2026", "dow": "Fri", "format": "reel", "type_label": "Flagship REEL — Kainchi Sthapana (evening)", "concept_short": "REEL: Kainchi Dham — the ashram that changed the world", "platform": "Instagram Reels + YouTube Shorts", "time": "8:00 PM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Reel — 60 seconds", "visual_style": "Documentary-cinematic. Kumaon landscapes, ashram footage, archival photos of Maharaj-ji, pilgrim devotion moments. Colour graded warm with deep forest greens.", "scene": "Mix of: drone over Kainchi valley, the two hairpin bends, the ashram gate, Hanuman murti, devotee queue, hands receiving prasad, Maharaj-ji archival B&W photo (with clear attribution). End on misty dawn.", "palette": ["#166534", "#D97706", "#7B2D26"], "duration": "60s", "hook": "0–3s: Aerial drone shot sweeping over the two hairpin bends. Text overlay appears letter by letter: 'Kainchi Dham.' Sub-text: 'The ashram that changed the world.'", "build": "3–50s beats: (3–8) Zoom to gate, text 'Established 15 May 1964'. (8–15) Hanuman murti close-up, text 'The temple Maharaj-ji built.' (15–23) Queue of devotees, text 'Steve Jobs came here.' (23–31) More devotees + archival photo, text 'Zuckerberg. Julia Roberts. Ram Dass.' (31–39) Tamil grandmother with mala, text 'And every Indian devotee who heard.' (39–50) Prasad being handed out, text 'SUB EK — All is One.'", "cta_ending": "50–60s: Slow zoom in on the small sign outside the ashram. Final text: '3N/4D Kainchi Dham Tour · From Delhi · Monthly departures · Link in bio 🙏'", "voiceover": "Optional soft Hindi voiceover reading the text, female voice, reverent. Otherwise music-only.", "onscreen_text": "As specified. Jost medium weight. Cream text on dark photos, dark text on light photos.", "transitions": "Slow cross-dissolves. 1.5–2s per beat. Match to audio swells.", "audio": "Hanuman Chalisa instrumental (no vocals — instrumental-only version) OR a cinematic devotional trending audio. Check week-of.", "design": "1080×1920. Closed captions for accessibility."}, "caption": "The ashram that changed the world. 🙏\n\nEstablished 15 May 1964. On this day, 62 years ago, Neem Karoli Baba consecrated the Hanuman temple that would become Kainchi Dham.\n\nSteve Jobs flew here in 1974 and credited his time here with shaping Apple.\nMark Zuckerberg was sent here by Jobs — and came back changed.\nJulia Roberts found her faith here.\nRam Dass wrote 'Be Here Now' at Maharaj-ji's feet.\n\nBut beyond the Western pilgrims, beyond the tech billionaires — Kainchi Dham is, and always has been, a place for Indian devotees.\n\nFor the Tamil grandmother who waited 50 years.\nFor the Delhi professional who needed to slow down.\nFor the family who came for healing.\n\nOn this Sthapana Divas — if Maharaj-ji is calling, we run monthly departures from Delhi.\n\n3 Nights · 4 Days · Kainchi Dham + Nainital\n\nNext departures: June 12, July 10, August 14\n\n🙏 Jai Maharaj-ji. Sub Ek.", "first_comment": "Tag the friend who needs to go to Kainchi this year 🙏", "hashtags": {"niche": ["#kainchidham", "#kainchisthapana", "#neemkarolibaba", "#maharajji", "#hanumantemple"], "mid": ["#uttarakhandtourism", "#nainitaltravel", "#subek", "#ramdass", "#spiritualreels", "#bhaktiyoga", "#himalayanspirituality"], "broad": ["#spiritual", "#faith", "#india", "#reels", "#journey"]}, "link": "Link in bio → Kainchi Dham tour", "schedule_rationale": "Friday 8 PM — family-time peak; evening Kainchi reel delivers flagship shareability for weekend WhatsApp forwards.", "cadence": "Post 2 of 7 this week (Reel 5 of 8) — Flagship Day double-post", "goal": "Reach + Shares + DMs", "metrics": "Flagship reels target: 50K+ reach, 3%+ share rate, 100+ DMs for Kainchi itinerary.", "tip": "Boost this reel with a small ₹2,000 ad spend targeted at Delhi, Mumbai, Bangalore users aged 35–55 interested in spirituality/meditation. Highest ROI spend of the month."}, {"day": 15, "date": "Saturday, May 16, 2026", "dow": "Sat", "format": "static", "type_label": "Interactive — Quote Card", "concept_short": "Quote card — Neem Karoli Baba's four teachings", "platform": "Instagram + Facebook", "time": "10:00 AM IST", "pillar": "Devotional Culture", "brief": {"format": "Static quote card", "visual_style": "Elegant single-quote card. Handwritten-serif display. Subtle texture like aged paper.", "scene": "Design-only. No photography.", "palette": ["#FAF6EE", "#7B2D26", "#D97706"], "text_overlay": "Full card reads:\n'Love everyone.\nServe everyone.\nRemember God.\nTell the truth.'\n— Neem Karoli Baba", "design": "1080×1080 square for maximum feed dominance. Generous whitespace. Logo subtle bottom centre."}, "caption": "Four sentences. One lifetime to understand.\n\nLove everyone.\nServe everyone.\nRemember God.\nTell the truth.\n\n— Neem Karoli Baba\n\nMaharaj-ji never wrote a book. Rarely gave lectures. His 'teachings' were often just these four instructions, repeated in different voices, in different moments, to different seekers.\n\nNot 'love most people'. Love everyone.\nNot 'serve when convenient'. Serve everyone.\nNot 'believe in God when it helps'. Remember God.\nAnd the last one — the hardest, always the hardest — tell the truth.\n\nSave this. Come back to it.\n\nSub Ek. 🙏", "first_comment": "Which of the four is hardest for you right now? Be honest 👇 (it's probably the fourth)", "hashtags": {"niche": ["#neemkarolibaba", "#maharajji", "#kainchidham", "#subek", "#behere now"], "mid": ["#spiritualwisdom", "#dailywisdom", "#bhaktiyoga", "#spiritualquote", "#gurubani", "#hinduquotes", "#ramdass"], "broad": ["#quotes", "#wisdom", "#spiritual", "#faith", "#inspiration"]}, "link": "No direct link — engagement post", "schedule_rationale": "Saturday 10 AM — late morning reflective scroll, quote posts have highest save-to-share ratio on weekends.", "cadence": "Post 3 of 7 this week", "goal": "Saves + Comments", "metrics": "Target 8%+ save rate (quote cards over-perform). Watch comment thread — should hit 100+ responses.", "tip": "Pin this as a Story Highlight under 'Wisdom'. Timeless content for profile visitors."}, {"day": 16, "date": "Sunday, May 17, 2026", "dow": "Sun", "format": "carousel", "type_label": "Package Comparison — Kainchi Two Tiers", "concept_short": "Kainchi Dham — fly-in (₹39,999) vs road trip (₹24,682) — which fits you?", "platform": "Instagram + Facebook", "time": "11:00 AM IST", "pillar": "Package Comparison / Decision Helper", "brief": {"format": "Carousel — 7 slides, split-screen comparison design", "visual_style": "Clean two-column comparison. Left column: airplane icon + saffron. Right column: road/mountain icon + maroon. Clear numbers, clear trade-offs.", "scene": "Slide 1 hero: two paths branching at a mountain — one ascending to a plane, one winding through Kumaon hills. Ivory background, hand-drawn map feel.", "palette": ["#D97706", "#7B2D26", "#FAF6EE"], "slides": ["SLIDE 1 (Hook): 'Two ways to reach Kainchi Dham. Which one fits your family?' — two-path illustration with handwritten arrows", "SLIDE 2 — SIDE BY SIDE OVERVIEW: Left 'FLY-IN 4 DAYS ₹39,999' | Right 'ROAD TRIP 5 DAYS ₹24,682' — with small photo of each", "SLIDE 3 — WHAT'S INCLUDED (plane side): 'Return Chennai-Delhi flights · Delhi-Kathgodam by AC car · 3N hotel near Kainchi · Daily aarti · Vegetarian meals'", "SLIDE 4 — WHAT'S INCLUDED (road side): '5-day road journey · Nainital + Ranikhet sightseeing · Kainchi Dham + Golu Devta + Naina Devi · More places covered'", "SLIDE 5 — WHO SHOULD CHOOSE FLY-IN: 'If you have 4 days only · Working professionals · Seniors who can't do long road hours · Focused Kainchi-only intent'", "SLIDE 6 — WHO SHOULD CHOOSE ROAD: 'If you have 5 days · Family with teens · Want to see Himalayan landscapes · Plan to extend to Jim Corbett / Mussoorie later'", "SLIDE 7 (CTA): 'Still not sure? DM KAINCHI + your travel dates + who's coming. We'll recommend the right fit — no hard sell.' — saffron on ivory with hand-written arrow"], "design": "Comparison grid in Jost 18px. Headings in Cormorant Garamond 32px. Pricing numbers BIG (48px) in gold. Keep whitespace generous."}, "caption": "✈️ or 🛣️ ?\n\nThe #1 question we get about Kainchi Dham: \"Should we fly or drive?\"\n\nHonest answer — it depends on 3 things:\n\n1️⃣ HOW MUCH TIME? 4 days = fly-in (₹39,999). 5 days = road trip (₹24,682).\n\n2️⃣ WHO'S COMING? Grandparents who tire easily? Fly-in wins. Kids who love the hills? Road trip wins.\n\n3️⃣ WHAT ELSE DO YOU WANT TO SEE? Only Kainchi? Fly. Nainital + Ranikhet + Golu Devta + Naina Devi? Road.\n\nSwipe for the full side-by-side breakdown ➡️\n\nBoth packages include:\n✨ Morning and evening aarti at Kainchi\n🏨 3-star AC hotels\n🍲 Vegetarian meals\n📿 Guided ashram protocol\n\nThe real question isn't which is better — it's which is right for your family.\n\nSave this carousel. Send to the person you're planning Kainchi with. 🙏\n\n🙏 DM 'KAINCHI' + dates + who's coming, we'll tell you honestly.", "first_comment": "Which one speaks to you — fly-in ✈️ or road trip 🛣️? Comment below & we'll answer any follow-up questions 🙏", "hashtags": ["KainchiDham", "NeemKaroliBaba", "KainchiDhamYatra", "NainitalTour", "DivineTourism", "NeemKaroliBabaAshram", "SpiritualTourIndia", "UttarakhandYatra", "KumaonPilgrimage", "KainchiAshram", "MaharajJi", "RamDass", "Kainchi", "Pilgrimage", "Uttarakhand", "Yatra", "Spiritual"], "link": "Link in bio → Kainchi Dham packages (fly-in 4D ₹39,999 OR road trip 5D ₹24,682)", "schedule_rationale": "Sunday 11 AM IST — peak travel-research browsing window. Families discuss weekend plans Sunday morning; this carousel is designed to become the 'send to family WhatsApp group' content.", "cadence": "Post 16 of 28 · Week 3 decision-helper content", "goal": "ENGAGEMENT + CONVERSION", "metrics": "Target 12%+ save rate (decision carousels save at 2× the rate). High share rate is the signal — families forward to group chats. Aim 15+ 'KAINCHI' DMs in first 48h.", "tip": "This post does the qualifying work so the DMs are pre-sorted — they come in saying 'we want fly-in' or 'we want road'. Close rate on these DMs is 2–3× normal inquiries."}, {"day": 17, "date": "Monday, May 18, 2026", "dow": "Mon", "format": "static", "type_label": "BTS / Culture", "concept_short": "BTS: Our driver Ramesh — 12 years with us", "platform": "Instagram + Facebook", "time": "8:00 AM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Static image + text overlay", "visual_style": "Candid, warm portrait of Ramesh (driver) leaning against his Innova near a temple gate. Environmental portrait. Golden-hour light.", "scene": "Shoot at Thiruthani or Swamimalai gate. Ramesh in clean white veshti/shirt. Innova visible behind but out of focus. Portrait vertical orientation cropped square.", "palette": ["#D97706", "#FAF6EE", "#1A1A1A"], "text_overlay": "None on image. Copy carries the story.", "design": "1080×1350 portrait crop. No logo overlay — feed looks editorial."}, "caption": "Meet Ramesh. 🙏\n\nIf you've been on an Arupadai Veedu tour with us in the last decade, chances are this is the man who drove you, kept your parents comfortable, and knew the exact back route to avoid 2 PM Madurai traffic.\n\nHe joined us in 2013. He's done over 400 Arupadai Veedu circuits. He knows every temple's darshan timing, which priests remember regular devotees, where the cleanest vegetarian meals are on the Palani–Madurai highway, and which kolam seller at Thiruchendur makes the best filter coffee.\n\nHis own family is from Palani. His father was a priest at the Dhandayuthapani temple.\n\nSome people call this 'transportation.' We call it lineage.\n\nThis is the part of pilgrimage that can't be Googled. The part that only comes from people like Ramesh.\n\nThank you, Ramesh sir. For 12 years, for 400 yatras, for every single family you've kept safe.\n\n🙏", "first_comment": "Tag Ramesh with a '🙏' below if you remember travelling with him ↓", "hashtags": {"niche": ["#divineTourismIndia", "#meetthedriver", "#arupadaiveedudriver", "#chennaitravels", "#trustedtravel"], "mid": ["#behindthescenes", "#pilgrimagetour", "#peoplefirst", "#travelguide", "#southindiatravel", "#indiatravel", "#travelteam"], "broad": ["#bts", "#peopleofindia", "#gratitude", "#team", "#journey"]}, "link": "No link — humanising post", "schedule_rationale": "Monday 8 AM — week start, humanising content builds brand warmth before the mid-week sales posts.", "cadence": "Post 5 of 7 this week", "goal": "Profile visits + Trust", "metrics": "BTS content has low save rate but high 'brand love' — watch profile visits and story share rate.", "tip": "Do a follow-up Story with a 'Question Box': 'Ask Ramesh anything about Arupadai Veedu' — he records 30-sec vertical voice-notes and we post as stories Thursday."}, {"day": 18, "date": "Tuesday, May 19, 2026", "dow": "Tue", "format": "reel", "type_label": "Murugan Day REEL", "concept_short": "REEL: 693 steps of Palani in 40 seconds", "platform": "Instagram Reels + YouTube Shorts", "time": "7:00 PM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Reel — 40 seconds", "visual_style": "POV hyperlapse of climbing Palani's 693 steps. First-person handheld.", "scene": "Shoot POV hyperlapse climbing from base to top. Include moments: shoe removal, first step, halfway rest, feet at 400th step, last step, entering temple, first darshan. Bonus: pan to elderly couple slowly climbing.", "palette": ["#D97706", "#7B2D26", "#1A1A1A"], "duration": "40s", "hook": "0–3s: Close-up of bare feet on first stone step. Text: '693 steps to Dhandayuthapani.'", "build": "3–35s: Hyperlapse climb. Text markers appear at steps: '0 · 100 · 250 · 400 · 550 · 693'. At each marker, brief pause on a detail — a devotee chanting, an offering left on a step, a view back to the plains, a kolam. Around step 400, cut to elderly couple climbing slowly, hand in hand — 3 sec. Resume POV. Reach top.", "cta_ending": "35–40s: First frame of Dhandayuthapani murti through temple doorway. Text: 'Every step is a prayer. Link in bio for Arupadai tours.'", "voiceover": "No voiceover. Let breathing + ambient sound lead. Natural sounds of sandals, chanting crowds.", "onscreen_text": "Step counters as above. Jost medium, saffron.", "transitions": "Hyperlapse = continuous. Cuts only for the elderly couple moment and the final darshan.", "audio": "Rhythmic devotional track with footstep-pace tempo (100–120 BPM). Check trending for Palani or Murugan audios.", "design": "1080×1920. Burned-in step counters."}, "caption": "693 steps. 🔱\n\nFrom the base of Sivagiri hill to the feet of Dhandayuthapani Murugan at Palani.\n\nEvery devotee climbs them the same way — and differently.\n\nFor some, it's 15 minutes. For some, it's two hours. For some, like the elderly couple you saw at step 400 — it's the hardest, slowest, most important climb of their lives.\n\nWe always tell first-timers: don't count the steps. Name each one.\n\nOne for your mother. One for your father. One for the brother who is sick. One for the child you are waiting for. One for gratitude. One for forgiveness. One for the part of yourself you want to leave behind.\n\nBy the time you reach the top, you've laid down 693 things. And the Lord is waiting.\n\nNext Arupadai Veedu departure: 4 June. Link in bio.\n\nVel Vel Muruga. 🙏", "first_comment": "Have you climbed Palani's 693? Drop a 🙏 ↓", "hashtags": {"niche": ["#palanimurugan", "#palanitemple", "#dhandayuthapani", "#arupadaiveedu", "#palanimalai"], "mid": ["#muruganbhakti", "#tamilnadutemples", "#southindiatemples", "#spiritualreels", "#pilgrimagetour", "#templesteps", "#muruganyatra"], "broad": ["#spiritual", "#travel", "#reels", "#india", "#sacred"]}, "link": "Link in bio → Arupadai Veedu June departures", "schedule_rationale": "Tuesday 7 PM — Murugan day evening, Palani-specific content peaks on Tuesday nights (devotees plan for next Tuesday visit).", "cadence": "Post 6 of 7 this week (Reel 6 of 8)", "goal": "Reach + Saves", "metrics": "Palani reels consistently outperform — target 25K+ reach, 5%+ save rate.", "tip": "Cross-post as a YouTube Short immediately — Palani searches are high volume on YouTube and this kind of POV content ranks well."}, {"day": 19, "date": "Wednesday, May 20, 2026", "dow": "Wed", "format": "carousel", "type_label": "Package Spotlight — Shirdi Fly-In", "concept_short": "Shirdi • Nashik • Shani Shignapur — 3-day fly-in from Chennai, ₹18,499", "platform": "Instagram + Facebook", "time": "8:00 AM IST", "pillar": "Package Spotlight — Short-Haul Fly-In", "brief": {"format": "Carousel — 6 slides", "visual_style": "Orange-saffron heavy (Sai Baba's color). Soft cream backgrounds. Text-forward with one hero photo per slide.", "scene": "Slide 1 hero: Sai Baba Samadhi Mandir facade at dawn. Slide 2–5: alternating temple photos + info cards.", "palette": ["#D97706", "#7B2D26", "#FAF6EE"], "slides": ["SLIDE 1 (Hook): 'Three holy places. Three days. Flights from Chennai included. ₹18,499.' — saffron banner on ivory, Sai Baba silhouette", "SLIDE 2 — SHIRDI: 'Sai Baba Samadhi Mandir. VIP darshan. Dwarkamai where he meditated for 60 years. Chavadi where he slept alternate nights.' Photo of samadhi mandir.", "SLIDE 3 — NASHIK: 'Trimbakeshwar Jyotirlinga — one of 12 most sacred Shiva shrines. Kumbh Mela city. Godavari origin point.' Photo of Trimbakeshwar.", "SLIDE 4 — SHANI SHIGNAPUR: 'The village with no locked doors. Where Shani Dev protects every home. Powerful for Saturn relief rituals.' Photo of the black Shani Dev shila.", "SLIDE 5 — WHAT'S INCLUDED: '✈️ Return flights Chennai↔Shirdi/Pune/Aurangabad · 🏨 2 nights hotel · 🚗 Private AC transfers · 🎫 VIP darshan at Samadhi Mandir · 🍲 Daily breakfast · 📿 Dedicated guide'", "SLIDE 6 (CTA): '3 days. ₹18,499 per person. Flights included. DM SHIRDI + preferred dates to book.' — saffron full-bleed with white text"], "design": "Deity/place names in Cormorant Garamond 40px. Body in Jost 17px. Sai Baba quote at bottom of Slide 2: 'Sabka Malik Ek' — small, in gold."}, "caption": "🕉️ 'Sabka Malik Ek' — one God for all.\n\nOur most popular fly-in pilgrimage. 3 days. 3 holy places. Flights from Chennai included.\n\n📍 SHIRDI — VIP darshan at Sai Baba Samadhi Mandir + Dwarkamai + Chavadi\n📍 NASHIK — Trimbakeshwar Jyotirlinga (one of the 12 most sacred Shiva shrines)\n📍 SHANI SHIGNAPUR — the famous village where no one locks their doors, under Shani Dev's protection\n\n✈️ Return flights Chennai ↔ Shirdi region (via Pune/Aurangabad)\n🏨 2 nights hotel\n🚗 Private AC transfers between sites\n🎫 VIP darshan at Samadhi Mandir (no 3-hour queues)\n🍲 Daily breakfast\n📿 Dedicated pilgrimage guide\n\n₹18,499 per person — all-inclusive.\n\nThis is the package we recommend first to families who say 'we don't have a week.' 3 days. 3 life-long memories.\n\nShirdi is where we've taken 500+ families since 2009. And every single one says the same thing when they come back: 'We'll go again.'\n\n🙏 Link in bio. DM 'SHIRDI' for June dates.", "first_comment": "Early Bird ends May 31 — June departures at ₹15,499 (was ₹18,499). Comment 🕉️ if Shirdi has been on your list.", "hashtags": ["Shirdi", "SaiBaba", "ShirdiSaiBaba", "Trimbakeshwar", "DivineTourism", "ShaniShignapur", "ShirdiTour", "SaiBabaTemple", "SabkaMalikEk", "ShirdiPilgrimage", "NashikTrimbakeshwar", "SpiritualTourIndia", "SaiBabaDarshan", "Pilgrimage", "FlyInPilgrimage", "Chennai", "Yatra"], "link": "Link in bio → 3-day Shirdi · Nashik · Shani Shignapur fly-in (₹18,499/pp · Early Bird ₹15,499)", "schedule_rationale": "Wednesday 8 AM IST — midweek content planning window. Sai Baba Thursday is tomorrow — post on Wednesday so followers remember when they do Thursday aarti at home.", "cadence": "Post 19 of 28 · Week 4 package spotlight #3", "goal": "LEAD + CONVERSION", "metrics": "This is our highest-converting product (low ticket + flights included = low-objection). Aim 20+ 'SHIRDI' DMs. Track % of DMs that book within 7 days — this should be 15%+.", "tip": "Pin the Sai Baba quote 'Sabka Malik Ek' as the first comment too — Sai Baba devotees respond emotionally to that phrase. Use it liberally across all Shirdi content."}, {"day": 20, "date": "Friday, May 22, 2026", "dow": "Fri", "format": "static", "type_label": "Promotional — June offer", "concept_short": "Early Bird — June departures — real prices across 5 packages", "platform": "Instagram + Facebook", "time": "6:30 PM IST", "pillar": "Offers & Bookings", "brief": {"format": "Static image — offer card", "visual_style": "Clean offer graphic. Large discount badge. Mountain + temple silhouette background. Saffron-gold palette.", "scene": "Design-only.", "palette": ["#D97706", "#B8962E", "#7B2D26"], "text_overlay": "Top: 'EARLY BIRD' (gold banner). Centre large: '15% OFF · June Departures'. Below: 'Chardham · Arupadai Veedu · Kainchi Dham · Only 14 slots left · Book by May 31'. CTA: 'DM BOOK · Link in bio'.", "design": "1080×1350. Urgency without being shrill. Beautiful typography rescues promotional posts.", "slides": ["SLIDE 1 (Hook): '☀️ EARLY BIRD — Book June before May 31, save ₹3,000 per person.' — bold saffron on ivory with sun ray graphic", "SLIDE 2 — Arupadai Veedu 5D card: Hero photo of Palani temple + '₹25,500 → ₹22,500' + 'Senior & Parent Friendly'", "SLIDE 3 — Kainchi + Nainital 5D card: Hero photo of Kainchi Jata Ganga stream + '₹24,682 → ₹21,682' + 'Road trip · 5 days'", "SLIDE 4 — Kainchi fly-in 4D card: Hero photo of the red hanuman murti + '₹39,999 → ₹36,999' + 'Flights included from Chennai'", "SLIDE 5 — Shirdi 3D card: Hero photo of Shirdi Samadhi Mandir + '₹18,499 → ₹15,499' + 'VIP darshan + flights'", "SLIDE 6 — Varanasi 4D card: Hero photo of Ganga aarti + '₹27,500 → ₹24,500' + 'Dawn + dusk Ganga boat rides'", "SLIDE 7 (CTA): 'DM EARLY + preferred package + dates. We'll send itinerary in 2 hours. Offer closes May 31.' — saffron background with white text"]}, "caption": "☀️ EARLY BIRD — June departures open ☀️\n\nBook before May 31, save ₹3,000 per person. Here's what we're running:\n\n🔺 Arupadai Veedu (5D) — ₹25,500 | Chennai → 6 Murugan abodes\n→ Now ₹22,500 for early bird\n\n🏔️ Kainchi Dham + Nainital (5D road trip) — ₹24,682\n→ Now ₹21,682 for early bird\n\n✈️ Kainchi Dham (4D fly-in from Chennai) — ₹39,999\n→ Now ₹36,999 for early bird — flights included\n\n🕉️ Shirdi • Nashik • Shani Shignapur (3D fly-in) — ₹18,499\n→ Now ₹15,499 for early bird\n\n🌊 Kasi (Varanasi) 4-day Ganga journey — ₹27,500\n→ Now ₹24,500 for early bird\n\nTerms: 30% advance, balance before travel. Prices exclude temple entry/meals unless specified. DM \"EARLY\" to lock June dates before the discount closes May 31.\n\n🙏 Link in bio for full itineraries.", "first_comment": "To book: DM 'EARLY' + preferred package + travel dates. We'll send itinerary within 2 hours. 🙏", "hashtags": {"niche": ["#junedepartures", "#chardhamyatra2026", "#arupadaiveedujune", "#kainchidhamtour", "#earlybird"], "mid": ["#pilgrimagetour", "#spiritualtravel", "#indiatourism", "#bookingopen", "#templetour", "#southindiatemples", "#uttarakhandtour"], "broad": ["#travel", "#offer", "#book", "#india", "#faith"]}, "link": "DM 'BOOK' + link in bio", "schedule_rationale": "Friday 6:30 PM — decision-making evening window, promotional content works best at end of week when planning is natural.", "cadence": "Post 1 of 7 this week", "goal": "DMs + Conversions", "metrics": "Primary KPI: DMs with 'EARLY' keyword (aim 30+ in first 48h). Secondary: link clicks. Save rate less important here — this is a buy-now post.", "tip": "Duplicate this as a Story with a countdown sticker to May 31. Story conversions can outpace feed on promo content."}, {"day": 21, "date": "Saturday, May 23, 2026", "dow": "Sat", "format": "carousel", "type_label": "Social Proof — 5 reviews", "concept_short": "Five devotee stories in 5 slides", "platform": "Instagram + Facebook", "time": "10:00 AM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Carousel — 6 slides", "visual_style": "Testimonial card grid. Each client slide = photo + name + one-sentence quote.", "scene": "Use five real clients (with consent), ideally with diversity — a young couple, a senior couple, an NRI family, a single traveller, a mother-daughter pair.", "palette": ["#D97706", "#FAF6EE", "#7B2D26"], "slides": ["SLIDE 1 (Hook): '5 devotees. 5 journeys. 5 reasons they came back.'", "SLIDE 2: Senior couple — 'At 78, I finished all 6 abodes. I thought I never would.' — Ramanathan & Lakshmi, Chennai", "SLIDE 3: NRI family — 'My children finally understood where their grandparents prayed.' — Suresh family, Singapore", "SLIDE 4: Solo traveller — 'Kainchi didn't give me answers. It took my questions away.' — Priya, Bangalore", "SLIDE 5: Mother-daughter — 'My mother and I hadn't spoken in 2 years. We walked out of Palani holding hands.' — Anitha, Chennai", "SLIDE 6 (CTA): 'Your story next? Link in bio.'"], "design": "1080×1350. Consistent template. All photos portrait-oriented."}, "caption": "Five devotees. Five journeys. Five reasons they came back. 🙏\n\nSwipe →\n\nEvery story is real. Every name is real (with permission). Every photo is from their actual tour.\n\nThis is what we do. Quietly, one family at a time, for 17 years.\n\nIf one of these stories sounds like one you've been waiting to live — link in bio.\n\nAnd Anitha, from slide 5 — we think of you and your mother every time we pass Palani.\n\n🙏", "first_comment": "Which story hit hardest? ↓ We'll share the full reel version of that story next week", "hashtags": {"niche": ["#divineTourismIndia", "#devoteestory", "#pilgrimtestimonial", "#arupadaiveedu", "#kainchidham"], "mid": ["#realstories", "#happyclient", "#pilgrimagetour", "#spiritualjourney", "#familyyatra", "#senioryatra", "#southindiatemples"], "broad": ["#stories", "#travel", "#faith", "#testimonial", "#india"]}, "link": "Link in bio → All reviews", "schedule_rationale": "Saturday 10 AM — weekend reflection time, testimonial content performs strongly for trust-building.", "cadence": "Post 2 of 7 this week", "goal": "Trust + DMs", "metrics": "Target 50+ comments voting which story hit hardest; convert top-voted into next week's reel.", "tip": "Whichever story wins the comments becomes next month's hero reel. Let audience pick — it always outperforms."}, {"day": 22, "date": "Sunday, May 24, 2026", "dow": "Sun", "format": "reel", "type_label": "Conversion REEL", "concept_short": "REEL: Book in 60 seconds — how it actually works", "platform": "Instagram Reels + YouTube Shorts", "time": "8:00 PM IST", "pillar": "Offers & Bookings", "brief": {"format": "Reel — 45 seconds", "visual_style": "Clean explainer, talking head + screen overlays showing WhatsApp conversation flow + calendar + payment screen (mocked).", "scene": "Founder/host on camera in office or home. Then cut to phone screen mockups showing exact booking flow. End back on host.", "palette": ["#D97706", "#FAF6EE", "#1A1A1A"], "duration": "45s", "hook": "0–3s: Host on camera: 'Booking an Arupadai Veedu tour with us takes 3 messages. Let me show you.' Quick zoom to phone.", "build": "3–40s: Screen-recorded WhatsApp mockup showing: (a) user sends 'BOOK Arupadai from Chennai, June 4', (b) our reply with itinerary PDF, (c) user says 'yes, 2 adults 2 seniors', (d) our reply with 30% deposit link, (e) payment confirmation, (f) our reply with pickup details. Voiceover host narrates each step. Timestamps shown.", "cta_ending": "40–45s: Back to host: 'That's it. DM us BOOK right now. Or link in bio.'", "voiceover": "Founder voice, warm, confident. Record clean; add subtle background music at 20% volume.", "onscreen_text": "Timestamps above each WhatsApp exchange.", "transitions": "Clean cuts.", "audio": "Low-key motivational track, 80 BPM, trending audio-adjacent.", "design": "1080×1920. Subtitles burned in."}, "caption": "Booking with us takes 3 WhatsApp messages. No forms. No call centres. No back-and-forth nonsense.\n\nWatch how simple it actually is ↑\n\n1. You DM 'BOOK' + tour name + city\n2. We send full itinerary + pricing\n3. You confirm → we send a deposit link → you're in\n\nAverage time from first message to confirmed booking: 2 hours.\n\nNo pressure. No hidden costs. No 'manager will call you in 15 minutes.'\n\nJust old-fashioned trusted travel, done the way your grandmother would've done it if she had WhatsApp.\n\n📲 DM 'BOOK' to start.\n\n🙏", "first_comment": "Any questions about booking? Ask below 👇 Or DM 'BOOK' to skip the small talk 🙏", "hashtags": {"niche": ["#divineTourismIndia", "#howtobook", "#pilgrimagebooking", "#arupadaiveedu", "#kainchidhamtour"], "mid": ["#easybooking", "#whatsappbooking", "#spiritualtourbooking", "#chardhamyatra", "#templetour", "#indiatravel", "#pilgrimagetour"], "broad": ["#travel", "#booking", "#india", "#reels", "#faith"]}, "link": "DM 'BOOK' + link in bio", "schedule_rationale": "Sunday 8 PM — family-planning mode, conversion reels peak Sunday nights for Monday-morning decisions.", "cadence": "Post 3 of 7 this week (Reel 7 of 8)", "goal": "Conversions", "metrics": "Direct-conversion reel. Target 20+ DMs, 6 paid bookings within 72 hours.", "tip": "Keep the reel on top of your feed for 72 hours by using it as your bio-featured reel. Highest-converting content of the month."}, {"day": 23, "date": "Monday, May 25, 2026", "dow": "Mon", "format": "carousel", "type_label": "Educational — Families", "concept_short": "Travelling with seniors — our playbook", "platform": "Instagram + Facebook", "time": "7:00 AM IST", "pillar": "Practical Yatra Guides", "brief": {"format": "Carousel — 8 slides", "visual_style": "Warm lifestyle photography of senior devotees on tours — smiling, being helped, having coffee, at temples. Interspersed with clean tip cards.", "scene": "Use archive photos from past senior-led tours (with consent). Some candid, some posed.", "palette": ["#D97706", "#FAF6EE", "#7B2D26"], "slides": ["SLIDE 1 (Hook): 'Taking your parents on yatra? Here's our 7-point senior playbook.'", "SLIDE 2: '1. AC vehicles mandatory. Non-AC = medical risk above 32°C.'", "SLIDE 3: '2. Max 2 temples per day. Quality darshan > rushed checklist.'", "SLIDE 4: '3. Hotels within 1 km of temple. No long morning walks before puja.'", "SLIDE 5: '4. Daily BP + sugar check built into itinerary.'", "SLIDE 6: '5. Pre-coordination with each temple for wheelchair access + priority darshan.'", "SLIDE 7: '6. Every meal vegetarian, low-oil, sattvic. No hotel buffets with risk.'", "SLIDE 8: '7. 24/7 local emergency number + nearest hospital pre-mapped.' + CTA"], "design": "1080×1350. Gentle type hierarchy. Clean icon per tip."}, "caption": "Taking your parents on yatra? This is our playbook. 🙏\n\nAfter 10,000+ families — many with devotees in their 70s and 80s — we've built a senior-first system. Swipe through all 7 points.\n\nThis is why our clients bring their parents back to us year after year.\n\nThis is also why we refuse to over-pack itineraries. We've seen too many budget tours that promise 'all 6 temples in 2 days' and deliver exhausted, unwell seniors who couldn't enjoy a single darshan.\n\nYour parents waited decades for this yatra. Don't let anyone rush it.\n\nDM 'SENIORS' for our dedicated senior-friendly itinerary options — pace, medical support, comfort built in.\n\n🙏", "first_comment": "📌 Save + send to your siblings. Which point matters most to your family? ↓", "hashtags": {"niche": ["#senioryatra", "#seniorfriendlytravel", "#parentsyatra", "#arupadaiveedu", "#kainchidham"], "mid": ["#elderlytravel", "#family", "#pilgrimagetour", "#templetour", "#indiatravel", "#caregiving", "#respectforelders"], "broad": ["#travel", "#family", "#care", "#india", "#faith"]}, "link": "DM 'SENIORS'", "schedule_rationale": "Monday 7 AM — start-of-week planning, senior-travel content converts strongly for adult children researching tours for parents.", "cadence": "Post 4 of 7 this week", "goal": "DMs + Saves", "metrics": "Target 5%+ save rate and 25+ 'SENIORS' DMs.", "tip": "Create a dedicated 'Senior-Friendly' highlight with this + older similar content. Strong repeat-visitor converter."}, {"day": 24, "date": "Tuesday, May 26, 2026", "dow": "Tue", "format": "reel", "type_label": "Final Murugan Tuesday REEL", "concept_short": "REEL: Every Arupadai temple at sunrise — 30s", "platform": "Instagram Reels + YouTube Shorts", "time": "6:00 AM IST", "pillar": "Temple Lore & Legend", "brief": {"format": "Reel — 30 seconds", "visual_style": "Sunrise hyperlapse compilation — one shot per temple, each 4–5 sec, showing the moment dawn hits the gopuram.", "scene": "Compile from existing archive: sunrise at each of 6 abodes. If gaps, use stock. Priority: Thiruchendur sunrise with ocean, Palani hilltop sunrise, Swamimalai morning mist.", "palette": ["#D97706", "#B8962E", "#1A1A1A"], "duration": "30s", "hook": "0–3s: Black frame fades. Hand lights a diya. Text: 'Sunrise at the six abodes.'", "build": "3–27s: Six hyperlapse sunrises, ~4 sec each. Temple names appear softly in bottom-left.", "cta_ending": "27–30s: Text card: 'June departure · 4 June from Chennai · 9 slots left · Link in bio'", "voiceover": "No voiceover. Sunrise doesn't need explanation.", "onscreen_text": "Temple names only.", "transitions": "Seamless morph/crossfade between sunrises.", "audio": "Lush devotional instrumental build-up. Trending Tamil devotional track if available.", "design": "1080×1920."}, "caption": "Sunrise at the six abodes of Lord Murugan. 🌅\n\nThirty seconds. One lifetime's worth of light.\n\nIf you've never had dawn darshan at one of these temples, you're missing the single most powerful moment of any Arupadai Veedu yatra.\n\nThe priests are preparing. The crowd hasn't arrived. The first light hits the gopuram. The aarti flames are lit.\n\nFor 4 minutes, you are alone with the Lord.\n\nThat's what our 4 June departure protects for you. Early hotel check-ins, temple-first mornings, sunrise darshan at every abode.\n\n9 slots left.\n\n🔱 Vel Vel Muruga. Link in bio.", "first_comment": "Ever had sunrise darshan? 🌅 Tell us which temple and what you remember ↓", "hashtags": {"niche": ["#arupadaiveedu", "#sunrisedarshan", "#palanimurugan", "#thiruchendur", "#muruganpilgrimage"], "mid": ["#sunrisespiritual", "#templesunrise", "#southindiatemples", "#tamilnadutemples", "#pilgrimagetour", "#spiritualreels", "#velmuruga"], "broad": ["#sunrise", "#temple", "#spiritual", "#india", "#reels"]}, "link": "Link in bio → June 4 Arupadai Veedu", "schedule_rationale": "Tuesday 6 AM — Murugan Tuesday sunrise, last Tuesday push for June bookings before May closes.", "cadence": "Post 5 of 7 this week (Reel 8 of 8 — final reel of month)", "goal": "Reach + Conversions", "metrics": "Should hit 30K+ reach. Final reel = push for June bookings. Target 10 conversions direct from this.", "tip": "This closes the reel set for May. Post-May, track which of the 8 reels over-performed and make that format the backbone of June."}, {"day": 25, "date": "Wednesday, May 27, 2026", "dow": "Wed", "format": "static", "type_label": "Package Spotlight — Premium Tier", "concept_short": "Sacred East Coast — Puri Jagannath + Konark — ₹74,500 / 5 days", "platform": "Instagram + Facebook", "time": "10:00 AM IST", "pillar": "Premium Package Spotlight", "brief": {"format": "Static post — single hero image with text overlay", "visual_style": "Cinematic. Deep sea-blue + stone-saffron palette — the exact colors of Puri. Wide aspect hero photo of the Jagannath Mandir chariots or Konark Sun Temple wheel.", "scene": "Hero image: the giant stone wheel of Konark Sun Temple at golden hour. Text overlay in upper third: 'SACRED EAST COAST — 5 DAYS — ₹74,500'. Divine Tourism logo bottom-right.", "palette": ["#1E3A5F", "#D97706", "#FAF6EE"], "design": "Cormorant Garamond 62px for headline. Jost 22px for subheadline. Text-overlay has 40% dark gradient behind for legibility. Subtle film grain."}, "caption": "🏛️ Some pilgrimages are bucket-list items. This is one of them.\n\nThe Sacred East Coast — 5 days across Odisha's greatest spiritual monuments:\n\n🏮 PURI — Jagannath Temple with VIP darshan (no 4-hour queues). The Rath Yatra route. Beach meditation at sunrise.\n☀️ KONARK — UNESCO World Heritage Sun Temple. The 12-wheeled stone chariot of Surya.\n🛕 BHUBANESWAR — Lingaraj temple, Mukteshwar, the ancient Kalingan architecture capital.\n\nWhy this is our premium tier (₹74,500):\n✨ VIP-level darshan at Jagannath — arranged via our Puri partnership\n✨ UNESCO-qualified guide at Konark (not tourist-shop guides)\n✨ 4-star sea-view hotel in Puri\n✨ Private AC SUV throughout\n✨ Traditional Mahaprasad temple meal (an experience in itself)\n\nThis isn't for everyone. It's for the devotee who's already done Arupadai, Kainchi, Varanasi — and is asking 'what's next?'\n\nFor 2026 we're running it twice a month, October through March. 6 seats per departure. Curated small groups only.\n\n🙏 Link in bio. DM 'PURI' if this is your next pilgrimage.", "first_comment": "This package sells out 8 weeks ahead. If October–December is calling you, reserve this quarter. 🙏", "hashtags": ["Jagannath", "PuriJagannath", "KonarkSunTemple", "PuriTemple", "DivineTourism", "RathYatra", "OdishaTourism", "LingarajTemple", "PuriYatra", "SunTemple", "UNESCOIndia", "PremiumPilgrimage", "Puri", "Odisha", "Jagannatha", "Pilgrimage", "Yatra"], "link": "Link in bio → 5-day Sacred East Coast (Puri + Konark + Bhubaneswar) (₹74,500/pp)", "schedule_rationale": "Wednesday 10 AM IST — midweek 'aspirational planning' window when premium buyers research big-ticket trips. Higher intent than weekend scrolling.", "cadence": "Post 25 of 28 · Week 5 premium-tier spotlight", "goal": "AWARENESS (Premium tier)", "metrics": "Don't measure this on volume. 3–5 serious DMs is a success. This post positions us as premium operators, which lifts perception across all packages. Track if Arupadai/Kainchi DMs cite this post ('I saw your Puri post, but…').", "tip": "Premium tier posts should never have promo language or Early Bird discounts — it undercuts the positioning. Keep it aspirational. People who book ₹74K packages don't buy on discount; they buy on trust and exclusivity."}, {"day": 26, "date": "Friday, May 29, 2026", "dow": "Fri", "format": "carousel", "type_label": "Final push — Month recap", "concept_short": "May recap — 28 stories, 1 sacred land", "platform": "Instagram + Facebook", "time": "7:30 PM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Carousel — 7 slides", "visual_style": "Archive-style best-of. Each slide a different style, nostalgic scrapbook feel.", "scene": "Compile best visuals from May's posts as a wrap.", "palette": ["#D97706", "#FAF6EE", "#7B2D26"], "slides": ["SLIDE 1 (Hook): 'May 2026. 28 stories. One sacred land.' — hero collage", "SLIDE 2: 'We told you about Kainchi Dham · and why Maharaj-ji still matters.'", "SLIDE 3: 'We walked you through all 693 Palani steps.'", "SLIDE 4: 'We showed you Thiruchendur standing against the tsunami.'", "SLIDE 5: 'We introduced you to Ramesh — our driver, your guide.'", "SLIDE 6: 'We gave you 5 mantras, 5 polls, 5 devotee stories.'", "SLIDE 7 (CTA): 'June departures open. Final slots filling. Link in bio 🙏'"], "design": "1080×1350. Feels like a photo album."}, "caption": "May 2026. 28 stories. One sacred land. 🙏\n\nThis month we:\n\n• Climbed Palani's 693 steps with you\n• Stood at Kainchi Dham on Sthapana Divas\n• Remembered Maharaj-ji's four teachings\n• Celebrated Akshaya Tritiya, Ganga Saptami, Buddha Purnima\n• Told you about the tsunami that didn't touch Thiruchendur\n• Introduced Ramesh, our driver of 12 years\n• Shared 5 mantras, 8 reels, and the Malathi family story\n\nThank you for every save. Every share. Every DM. Every 'Vel Vel' in the comments.\n\nJune awaits. Chardham opens. Arupadai yatras begin. Kainchi calls.\n\nIf May stirred something — June is where you go.\n\n📅 June 2 / 4 / 12 / 16 / 30 — departures live\n🔗 Link in bio to book\n📲 Or DM 'BOOK' for instant itinerary\n\nVel Vel Muruga. Jai Maharaj-ji. Jai Badri Vishal.\n\n🙏 — Team Divine Tourism", "first_comment": "What was your favourite post this month? ↓ (We genuinely want to know — shapes June's content)", "hashtags": {"niche": ["#divineTourismIndia", "#mayrecap", "#arupadaiveedu", "#kainchidham", "#chardhamyatra"], "mid": ["#pilgrimagetour", "#spiritualjourney", "#monthrecap", "#instagramrecap", "#templetour", "#southindiatemples", "#himalayanpilgrimage"], "broad": ["#recap", "#travel", "#spiritual", "#india", "#faith"]}, "link": "Link in bio → All June packages", "schedule_rationale": "Friday evening end-of-month — reflection + final push timing.", "cadence": "Post 7 of 7 this week", "goal": "Conversions + Feedback", "metrics": "Final-push post — target 15 conversions, 50 feedback comments to inform June planning.", "tip": "Take Saturday off content creation. Spend Saturday replying to every comment and DM. Real conversation at month-end builds Q3 loyalty."}, {"day": 27, "date": "Saturday, May 30, 2026", "dow": "Sat", "format": "static", "type_label": "Engagement — Gratitude", "concept_short": "Gratitude post — thank you to followers", "platform": "Instagram + Facebook", "time": "11:00 AM IST", "pillar": "Pilgrim Journey Diaries", "brief": {"format": "Static — ornate card", "visual_style": "Warm saffron-gold textured card. Handwritten-style type. Lotus motif.", "scene": "Design-only.", "palette": ["#D97706", "#B8962E", "#FAF6EE"], "text_overlay": "Centre: 'Thank you.' in large Cormorant Garamond. Below: 'For 1,200 new devotees this month. For every save, share, DM, and comment.' Small: '— Team Divine Tourism'", "design": "1080×1080 square. Clean, reverent."}, "caption": "A simple one today.\n\nThank you. 🙏\n\nTo the 1,200 devotees who followed us this month.\nTo every family who DM'd 'BOOK' and is flying with us in June.\nTo every grandmother who asked her son to WhatsApp us.\nTo every 'Vel Vel Muruga' you typed in the comments.\n\nWe don't take any of it for granted.\n\nThis small community we are quietly building — it matters to us. It matters to every driver, priest, hotel manager, and coordinator we work with.\n\nThank you for trusting us with your pilgrimage.\n\nOm Shanti. 🙏", "first_comment": "Just drop a 🙏 if this reached you ↓", "hashtags": {"niche": ["#divineTourismIndia", "#thankyou", "#pilgrimcommunity", "#gratitude", "#devoteelove"], "mid": ["#instagramcommunity", "#spiritualcommunity", "#bhaktiyoga", "#faithcommunity", "#indianspiritual", "#pilgrimagetour", "#templetour"], "broad": ["#gratitude", "#thankful", "#community", "#spiritual", "#india"]}, "link": "None — gratitude post", "schedule_rationale": "Saturday late morning — low-commercial warm content, builds end-of-month brand love.", "cadence": "Post 1 of 2 this week", "goal": "Engagement", "metrics": "Watch comment volume. Target 500+ 🙏 comments. Pure community-warmth metric.", "tip": "Respond to every single 🙏 comment with a personalised 🙏 back. Takes 2 hours. Builds 500 micro-relationships that turn into bookings across Q3."}, {"day": 28, "date": "Sunday, May 31, 2026", "dow": "Sun", "format": "carousel", "type_label": "Final promo — Deadline", "concept_short": "Final call — Early Bird ends tonight — 5 packages at locked-in prices", "platform": "Instagram + Facebook", "time": "8:30 PM IST", "pillar": "Offers & Bookings", "brief": {"format": "Carousel — 4 slides", "visual_style": "Clean urgency graphic. Countdown visual. Saffron dominant.", "scene": "Design-only.", "palette": ["#B45309", "#FAF6EE", "#7B2D26"], "slides": ["SLIDE 1 (Hook): 'Last 3 hours. Early bird 15% ends at midnight.' — countdown visual", "SLIDE 2: 'Chardham June 2 · 4 slots left.' — package card", "SLIDE 3: 'Arupadai Veedu June 4 · 6 slots left. Kainchi June 12 · 2 slots left.' — stack", "SLIDE 4 (CTA): 'DM BOOK now. We're online until midnight. After midnight = full pricing.' — final"], "design": "1080×1350."}, "caption": "⏰ Today is the last day.\n\nEarly Bird on June departures ends at 11:59 PM IST tonight.\n\nFinal reminder of what's available:\n\n🔺 Arupadai Veedu 5D — ₹22,500 (was ₹25,500)\n🏔️ Kainchi + Nainital 5D — ₹21,682 (was ₹24,682)\n✈️ Kainchi fly-in 4D — ₹36,999 (was ₹39,999)\n🕉️ Shirdi fly-in 3D — ₹15,499 (was ₹18,499)\n🌊 Kasi 4D — ₹24,500 (was ₹27,500)\n\nFrom tomorrow, regular prices apply.\n\nIf June is your month — now's the moment. DM \"CONFIRM\" + package + dates.\n\n🙏 Divine Tourism — sacred journeys, curated since 2009.", "first_comment": "Deadline: 11:59 PM IST tonight. Our team is on WhatsApp till midnight. Link in bio or DM 'CONFIRM'.", "hashtags": {"niche": ["#earlybirdoffer", "#chardhamyatra2026", "#arupadaiveedujune", "#kainchidhamtour", "#lastcall"], "mid": ["#pilgrimagetour", "#junedepartures", "#spiritualtravel", "#bookingclosing", "#indiatourism", "#templetour", "#uttarakhandtour"], "broad": ["#travel", "#offer", "#deadline", "#india", "#faith"]}, "link": "DM 'BOOK' + link in bio", "schedule_rationale": "Sunday 8:30 PM — 3.5 hours before midnight deadline, urgency content peaks in final hours.", "cadence": "Post 2 of 2 this week (FINAL POST OF MAY)", "goal": "Conversions", "metrics": "Final-hours conversion blast. Target 20 bookings from last-chance urgency. Track hour-by-hour.", "tip": "At 11 PM post a Story: '1 hour left — 2 slots on Kainchi still open.' Last-hour urgency closes hesitant bookers."}]
+</script>
+
+<script>
+// ============ DIVINE TOURISM — MAY 2026 CALENDAR ENGINE ============
+
+const DATA = JSON.parse(document.getElementById('calendar-data').textContent);
+const TOTAL_PIECES = DATA.length;
+const STORAGE_KEY = 'divine-tourism-may2026-status';
+
+// Build lookup: actual calendar day of May -> array of entries (May 15 has 2)
+const byDay = {};
+DATA.forEach((item, idx) => {
+  // date field is like "Friday, May 15, 2026" — extract day of month
+  const m = item.date.match(/May (\d+),/);
+  const mayDay = m ? parseInt(m[1], 10) : item.day;
+  if (!byDay[mayDay]) byDay[mayDay] = [];
+  byDay[mayDay].push({ ...item, _idx: idx, _mayDay: mayDay });
+});
+
+// Status store in localStorage
+function loadStatuses() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveStatuses(s) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
+}
+let STATUSES = loadStatuses();
+
+// ============ CALENDAR GRID RENDERING ============
+// May 2026: May 1 is Friday. Weeks shown Mon-Sun.
+// We'll render 5 rows starting from Mon Apr 27 (padding) to Sun May 31.
+function renderCalendar() {
+  const container = document.getElementById('calendar-weeks');
+  const weeks = [
+    { title: 'Week 1 — Foundation', sub: 'Apr 27 – May 3 · Brand Story & Akshaya Tritiya', startDay: -4, endDay: 3 },
+    { title: 'Week 2 — Buildup', sub: 'May 4 – May 10 · Arupadai Veedu Deep Dives', startDay: 4, endDay: 10 },
+    { title: 'Week 3 — Flagship', sub: 'May 11 – May 17 · Kainchi Sthapana Divas', startDay: 11, endDay: 17 },
+    { title: 'Week 4 — Conversion', sub: 'May 18 – May 24 · Offers & Social Proof', startDay: 18, endDay: 24 },
+    { title: 'Week 5 — Wrap & Transition', sub: 'May 25 – May 31 · Recap & June Preview', startDay: 25, endDay: 31 }
+  ];
+
+  let html = '';
+  weeks.forEach(wk => {
+    html += `<div class="week-wrap">
+      <div class="week-title">${wk.title}<small>${wk.sub}</small></div>
+      <div class="calendar-grid">`;
+    // Weekday header strip
+    const weekdayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    weekdayNames.forEach(n => {
+      html += `<div style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);text-align:center;padding:4px 0;font-weight:600;">${n}</div>`;
+    });
+    // Determine which weekday each day is. May 1 2026 = Fri, so day of week for day d is (d+3) mod 7 where Mon=0.
+    // For week 1 (startDay=-4): -4→Mon Apr 27, -3→Tue, -2→Wed, -1→Thu, 0→Fri Apr 30, 1→Fri May 1... wait recompute
+    // May 1 2026 = Friday. So day 1 = col 4 (Fri, if Mon=0). Day -3 = Apr 28 Tuesday? Let's just compute from JS Date.
+    for (let d = wk.startDay; d <= wk.endDay; d++) {
+      let dateObj;
+      if (d < 1) dateObj = new Date(2026, 3, 30 + d); // Apr (month 3)
+      else if (d > 31) dateObj = new Date(2026, 5, d - 31); // June (month 5)
+      else dateObj = new Date(2026, 4, d); // May (month 4)
+      const dayName = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][dateObj.getDay()];
+      const monthName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][dateObj.getMonth()];
+      const actualDate = dateObj.getDate();
+      const isMay = dateObj.getMonth() === 4;
+      const entries = isMay ? (byDay[actualDate] || []) : [];
+
+      if (entries.length === 0) {
+        // empty/off day
+        const offLabel = isMay ? (dateObj.getDay() === 4 ? 'Rest day' : 'No post') : (monthName + ' ' + actualDate);
+        html += `<div class="day-cell" style="opacity:0.4;cursor:default;background:var(--ivory);">
+          <div class="day-num" style="font-size:16px;color:var(--muted);">${actualDate}</div>
+          <div class="day-date">${dayName} · ${monthName}</div>
+          <div class="day-concept" style="margin-top:auto;font-size:10px;color:var(--muted);">${offLabel}</div>
+        </div>`;
+      } else {
+        // one or two entries — render each as clickable
+        entries.forEach(e => {
+          const st = STATUSES[e._idx] || 'not_started';
+          const statusEmoji = {not_started:'📋', in_progress:'✏️', scheduled:'🗓', published:'✅', on_hold:'⏸'}[st];
+          const formatLabel = e.format === 'reel' ? 'REEL' : (e.format === 'carousel' ? 'CAROUSEL' : 'STATIC');
+          html += `<div class="day-cell ${e.format==='reel'?'reel':''}" data-status="${st}" onclick="openPanel(${e._idx})">
+            <span class="status-badge">${statusEmoji}</span>
+            <div class="day-num">${actualDate}</div>
+            <div class="day-date">${dayName} · ${e.time.replace(' IST','')}</div>
+            <div class="day-type">${e.type_label}</div>
+            <div class="day-concept">${e.concept_short}</div>
+            <span class="format-icon">${formatLabel}</span>
+          </div>`;
+        });
+      }
+    }
+    html += `</div></div>`;
+  });
+  container.innerHTML = html;
+  updateProgress();
+}
+
+// ============ REEL CARDS ============
+function renderReels() {
+  const container = document.getElementById('reel-cards');
+  const reels = DATA.map((x,i) => ({...x, _idx: i})).filter(x => x.format === 'reel');
+  let html = '';
+  reels.forEach((r, i) => {
+    const mDay = r.date.match(/May (\d+),/);
+    const realMayDay = mDay ? mDay[1] : r.day;
+    const viralClass = (r.brief.duration && parseInt(r.brief.duration) <= 30) ? 'virality-high' : 'virality-med';
+    const viralLabel = (r.brief.duration && parseInt(r.brief.duration) <= 30) ? 'HIGH VIRALITY' : 'MEDIUM VIRALITY';
+    html += `<div class="reel-card" onclick="openPanel(${r._idx})" style="cursor:pointer;">
+      <span class="reel-label">REEL ${i+1} · ${r.dow.toUpperCase()} ${realMayDay} MAY</span>
+      <h4>${r.concept_short}</h4>
+      <div class="hook">"${r.brief.hook || r.brief.onscreen_text || r.concept_short}"</div>
+      <div class="reel-meta"><strong>${r.brief.duration || '30s'}</strong> · ${r.brief.audio ? r.brief.audio.split(',')[0] : 'Custom audio'}</div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
+        <span class="${viralClass}">${viralLabel}</span>
+        <span style="font-size:11px;color:var(--muted);">Tap for full brief →</span>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ============ CHECKLIST ============
+const CHECKLIST_ITEMS = [
+  { id: 'c1', text: 'Update Instagram & Facebook bio per the "Profile Optimization" section — pin the May 1 carousel to the top.' },
+  { id: 'c2', text: 'Set up Stan Store (or Beacons) link-in-bio with 3 top links: May tour calendar, WhatsApp "Plan My Yatra" form, Arupadai Veedu PDF guide.' },
+  { id: 'c3', text: 'Batch-create all Week 1 content (May 1, 2, 3, 4) over the April 27–29 weekend — shoot stock temple footage on location during final April tours.' },
+  { id: 'c4', text: 'Load all 28 pieces into Buffer, Later, or Meta Business Suite scheduler with the IST publish times noted on each day.' },
+  { id: 'c5', text: 'Note each post\'s hashtag set in a Google Doc — don\'t type fresh every time. Rotate 17 tags per post using 5 niche + 7 mid + 5 broad formula.' },
+  { id: 'c6', text: 'Block a 15-minute daily window (around 9:30 AM IST) for replies to DMs and comments — engagement in the first hour boosts reach 3×.' },
+  { id: 'c7', text: 'Check Instagram Reels trending audio every Sunday evening — swap in the current trending track if it fits the brief (especially for the 8 reels).' },
+  { id: 'c8', text: 'Set up a shared Google Drive folder "Divine-Tourism-May-2026-Content" with subfolders: /Photos, /Reels, /Approved-Copy, /UGC-Inbox.' },
+  { id: 'c9', text: 'Identify 10 peer spiritual-tour accounts & 5 micro-influencer pilgrim bloggers to engage with daily (comment, save, share) to warm up the algorithm.' },
+  { id: 'c10', text: 'Review Instagram Insights every Sunday at 8 PM — note top 3 performing posts and double down on format for Week 2.' }
+];
+function renderChecklist() {
+  const ul = document.getElementById('checklist');
+  let html = '';
+  CHECKLIST_ITEMS.forEach(item => {
+    const done = STATUSES['cl_' + item.id] === 'done';
+    html += `<li class="${done?'done':''}" onclick="toggleChecklist('${item.id}')">
+      <input type="checkbox" ${done?'checked':''} onclick="event.stopPropagation();toggleChecklist('${item.id}')">
+      <span>${item.text}</span>
+    </li>`;
+  });
+  ul.innerHTML = html;
+}
+function toggleChecklist(id) {
+  const key = 'cl_' + id;
+  STATUSES[key] = STATUSES[key] === 'done' ? null : 'done';
+  saveStatuses(STATUSES);
+  renderChecklist();
+}
+
+// ============ DAY PANEL ============
+let currentIdx = null;
+function openPanel(idx) {
+  currentIdx = idx;
+  const e = DATA[idx];
+  document.getElementById('panel-type').textContent = e.type_label.toUpperCase();
+  document.getElementById('panel-title').textContent = e.concept_short;
+  document.getElementById('panel-meta').textContent = `${e.date} · ${e.time} · ${e.platform} · ${e.format.toUpperCase()}`;
+
+  // Status buttons
+  const st = STATUSES[idx] || 'not_started';
+  document.querySelectorAll('.panel-status-row button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.statusBtn === st);
+  });
+
+  // Always render Brief tab first
+  switchTab({ currentTarget: document.querySelector('.panel-tab') }, 'brief');
+  document.querySelectorAll('.panel-tab').forEach((t,i) => t.classList.toggle('active', i===0));
+
+  document.getElementById('day-panel').classList.add('active');
+  document.getElementById('panel-backdrop').classList.add('active');
+}
+
+function closePanel() {
+  document.getElementById('day-panel').classList.remove('active');
+  document.getElementById('panel-backdrop').classList.remove('active');
+  currentIdx = null;
+}
+
+function navDay(direction) {
+  if (currentIdx === null) return;
+  const next = currentIdx + direction;
+  if (next >= 0 && next < DATA.length) openPanel(next);
+}
+
+function switchTab(evt, tabName) {
+  document.querySelectorAll('.panel-tab').forEach(t => t.classList.remove('active'));
+  if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+  if (currentIdx === null) return;
+  const e = DATA[currentIdx];
+  const body = document.getElementById('panel-body');
+  if (tabName === 'brief') body.innerHTML = renderBrief(e);
+  else if (tabName === 'copy') body.innerHTML = renderCopy(e);
+  else if (tabName === 'schedule') body.innerHTML = renderSchedule(e);
+  else if (tabName === 'perf') body.innerHTML = renderPerformance(e);
+}
+
+function renderBrief(e) {
+  const b = e.brief;
+  let html = `<div class="block"><h4>Goal</h4><span class="goal-badge">${e.goal}</span></div>`;
+  html += `<div class="block"><h4>Format</h4><p>${b.format}</p></div>`;
+  html += `<div class="block"><h4>Visual Style</h4><p>${b.visual_style}</p></div>`;
+  html += `<div class="block"><h4>Scene / Setup</h4><p>${b.scene}</p></div>`;
+  if (b.palette) {
+    html += `<div class="block"><h4>Palette</h4><div class="swatches">` +
+      b.palette.map(c => `<div class="swatch" style="background:${c};" title="${c}"></div>`).join('') +
+      `</div></div>`;
+  }
+  if (b.slides) {
+    html += `<div class="block"><h4>Slides</h4><ul>` + b.slides.map(s => `<li>${s}</li>`).join('') + `</ul></div>`;
+  }
+  if (b.duration) html += `<div class="block"><h4>Duration</h4><p>${b.duration}</p></div>`;
+  if (b.hook) html += `<div class="block"><h4>Hook (first 3 sec)</h4><p style="font-style:italic;">${b.hook}</p></div>`;
+  if (b.build) html += `<div class="block"><h4>Build / Structure</h4><p>${b.build}</p></div>`;
+  if (b.cta_ending) html += `<div class="block"><h4>CTA Ending</h4><p>${b.cta_ending}</p></div>`;
+  if (b.voiceover) html += `<div class="block"><h4>Voiceover</h4><p>${b.voiceover}</p></div>`;
+  if (b.onscreen_text) html += `<div class="block"><h4>On-screen Text</h4><p>${b.onscreen_text}</p></div>`;
+  if (b.transitions) html += `<div class="block"><h4>Transitions / Shots</h4><p>${b.transitions}</p></div>`;
+  if (b.audio) html += `<div class="block"><h4>Audio</h4><p>${b.audio}</p></div>`;
+  if (b.design) html += `<div class="block"><h4>Design Notes</h4><p>${b.design}</p></div>`;
+  html += `<button class="regen-btn" onclick="regenerate(${currentIdx})">🔄 Regenerate this day — different angle</button>`;
+  return html;
+}
+
+function renderCopy(e) {
+  let html = `<div class="block"><h4>Caption</h4>
+    <div class="copy-box" id="caption-text">${escapeHtml(e.caption)}</div>
+    <button class="copy-btn" onclick="copyText('caption-text', this)">Copy caption</button>
+  </div>`;
+  if (e.first_comment) {
+    html += `<div class="block"><h4>First Comment (pinned)</h4>
+      <div class="copy-box" id="firstcomment-text">${escapeHtml(e.first_comment)}</div>
+      <button class="copy-btn" onclick="copyText('firstcomment-text', this)">Copy first comment</button>
+    </div>`;
+  }
+  html += `<div class="block"><h4>Hashtags (17)</h4><div class="hashtag-pills">` +
+    e.hashtags.map(t => `<span class="hashtag-pill" onclick="copyHashtag('${t}', this)">#${t}</span>`).join('') +
+    `</div><button class="copy-btn" onclick="copyAllHashtags(${currentIdx}, this)">Copy all hashtags</button></div>`;
+  if (e.link) html += `<div class="block"><h4>Link / CTA Destination</h4><p>${e.link}</p></div>`;
+  return html;
+}
+
+function renderSchedule(e) {
+  let html = `<div class="block"><h4>Publish Date</h4><p>${e.date}</p></div>`;
+  html += `<div class="block"><h4>Publish Time</h4><p><strong>${e.time}</strong></p></div>`;
+  html += `<div class="block"><h4>Platform(s)</h4><p>${e.platform}</p></div>`;
+  html += `<div class="block"><h4>Why this slot?</h4><p>${e.schedule_rationale}</p></div>`;
+  html += `<div class="block"><h4>Weekly cadence</h4><p>${e.cadence}</p></div>`;
+  html += `<div class="block"><h4>Content Pillar</h4><p>${e.pillar}</p></div>`;
+  return html;
+}
+
+function renderPerformance(e) {
+  let html = `<div class="block"><h4>Primary KPI</h4><span class="goal-badge">${e.goal}</span></div>`;
+  html += `<div class="block"><h4>Target metrics</h4><p>${e.metrics}</p></div>`;
+  html += `<div class="block"><h4>Pro tip</h4><p style="background:var(--ivory);border-left:3px solid var(--saffron);padding:10px 12px;border-radius:4px;">💡 ${e.tip}</p></div>`;
+  return html;
+}
+
+function setStatus(newStatus) {
+  if (currentIdx === null) return;
+  STATUSES[currentIdx] = newStatus;
+  saveStatuses(STATUSES);
+  document.querySelectorAll('.panel-status-row button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.statusBtn === newStatus);
+  });
+  renderCalendar();
+  updateProgress();
+}
+
+function updateProgress() {
+  let published = 0;
+  for (let i = 0; i < DATA.length; i++) {
+    if (STATUSES[i] === 'published') published++;
+  }
+  const pct = Math.round((published / TOTAL_PIECES) * 100);
+  const fill = document.getElementById('progress-fill');
+  const text = document.getElementById('progress-pct');
+  const count = document.getElementById('published-count');
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = pct + '%';
+  if (count) count.textContent = published;
+}
+
+function regenerate(idx) {
+  const e = DATA[idx];
+  const prompt = `Regenerate the social media content for Divine Tourism India scheduled for ${e.date} — ${e.concept_short} (${e.format}). Give me a completely different creative angle: different hook, different visual concept, different caption voice, but still serving the same goal (${e.goal}) and content pillar (${e.pillar}). Keep it on-brand for a Chennai-based spiritual tour operator running Arupadai Veedu and Kainchi Dham pilgrimages. Audience is South Indian Tamil families, senior pilgrims, and NRIs aged 35-60. Provide: new brief, new caption, new 17 hashtags.`;
+  if (typeof sendPrompt === 'function') sendPrompt(prompt);
+  else alert('Regenerate: Copy this prompt into Claude:\n\n' + prompt);
+}
+
+function copyText(elementId, btn) {
+  const el = document.getElementById(elementId);
+  const text = el ? el.innerText : '';
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  }).catch(() => alert('Copy failed. Select text manually.'));
+}
+
+function copyHashtag(tag, el) {
+  navigator.clipboard.writeText('#' + tag).then(() => {
+    const orig = el.textContent;
+    el.textContent = '✓ ' + orig;
+    setTimeout(() => el.textContent = orig, 1200);
+  });
+}
+
+function copyAllHashtags(idx, btn) {
+  const tags = DATA[idx].hashtags.map(t => '#' + t).join(' ');
+  navigator.clipboard.writeText(tags).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ All 17 copied!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function toggleSection(headEl) {
+  const section = headEl.parentElement;
+  const body = section.querySelector('.section-body');
+  const toggle = headEl.querySelector('.toggle');
+  const isClosed = body.style.display === 'none';
+  body.style.display = isClosed ? '' : 'none';
+  if (toggle) toggle.textContent = isClosed ? '▼' : '▶';
+}
+
+// ============ CSV EXPORT ============
+function exportCSV() {
+  const headers = ['Day','Date','Day of Week','Format','Type','Concept','Platform','Publish Time','Pillar','Goal','Caption','Hashtags','Status'];
+  const rows = DATA.map((e,i) => [
+    e.day, e.date, e.dow, e.format, e.type_label, e.concept_short,
+    e.platform, e.time, e.pillar, e.goal,
+    e.caption.replace(/\n/g,' \\ '),
+    e.hashtags.map(t => '#'+t).join(' '),
+    STATUSES[i] || 'not_started'
+  ]);
+  let csv = headers.join(',') + '\n';
+  rows.forEach(r => csv += r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',') + '\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'divine-tourism-may-2026.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+// ============ INIT ============
+document.addEventListener('DOMContentLoaded', () => {
+  renderCalendar();
+  renderReels();
+  renderChecklist();
+  updateProgress();
+  // keyboard navigation for panel
+  document.addEventListener('keydown', ev => {
+    if (!document.getElementById('day-panel').classList.contains('active')) return;
+    if (ev.key === 'Escape') closePanel();
+    else if (ev.key === 'ArrowLeft') navDay(-1);
+    else if (ev.key === 'ArrowRight') navDay(1);
+  });
+});
+
+</script>
+
+</body>
+</html>
